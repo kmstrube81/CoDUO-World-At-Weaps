@@ -1,0 +1,238 @@
+Particle
+{
+	name				smoke
+
+	flags				setShaderTime useAlpha
+
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				0 1
+
+	life				1250 3000
+
+	delay				0 300
+
+	cullrange			4000
+
+	radius				60 50
+
+	wind				95 100
+
+	rotation			-15 15
+
+	rotationDelta		-1 1
+
+	velocity			13 -2 -2 17 2 2
+
+	acceleration		0 -2 -2 0 2 2
+
+	rgb
+	{
+		end				0 0 0
+	}
+
+	alpha
+	{
+		start			0.35 0.5
+		end				0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			4 8
+		end				10 15
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_top_blk_a
+		smoke/smk_p_top_blk_b
+		smoke/smk_p_top_blk_c
+	]
+}
+
+Particle
+{
+	name				fire_flames
+
+	flags				setShaderTime
+
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				1 2
+
+	life				500 750
+
+	delay				50 300
+
+	cullrange			6000
+
+	radius				60 50
+
+	wind				95 100
+
+	rotation			-15 15
+
+	rotationDelta		-1 1
+
+	velocity			25 -5 -5 25 5 5
+
+	acceleration		-2 -2 -2 2 2 2
+
+	alpha
+	{
+		start			0.75 1
+		end				0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			5
+		end				10
+		flags			linear
+	}
+
+	shaders
+	[
+		fire/flame_lick_a
+		fire/flame_lick_b
+		fire/flame_lick_c
+		fire/flame_lick_d
+		fire/flame_lick_e
+		fire/flame_lick_f
+	]
+}
+
+Particle
+{
+	name				smoke_mist
+
+	flags				setShaderTime useAlpha
+
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	life				3750 4000
+
+	delay				0 300
+
+	cullrange			2000
+
+	radius				60 50
+
+	rotation			0 360
+
+	rotationDelta		-5 5
+
+	velocity			15 -1 -1 20 1 1
+
+	acceleration		0 -2 -2 0 2 2
+
+	rgb
+	{
+		start			0.1529 0.1529 0.1529
+		end				0.3451 0.3333 0.3686
+		flags			linear
+	}
+
+	alpha
+	{
+		end				0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			5 8
+		end				10 15
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_none_wht_a
+		smoke/smk_p_none_wht_b
+		smoke/smk_p_none_wht_c
+	]
+}
+
+Particle
+{
+	name				smoke_underlit
+
+	flags				setShaderTime
+
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				0 1
+
+	life				750 1000
+
+	delay				0 300
+
+	cullrange			2000
+
+	radius				60 50
+
+	rotation			170 190
+
+	rotationDelta		-1 1
+
+	velocity			13 -2 -2 17 2 2
+
+	acceleration		0 -2 -2 0 2 2
+
+	rgb
+	{
+		end				0.6745 0.4471 0.2745
+		flags			linear
+	}
+
+	alpha
+	{
+		start			0.75 0.85
+		end				0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			3 5
+		end				9 13
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_top_fire_a
+		smoke/smk_p_top_fire_b
+		smoke/smk_p_top_fire_c
+	]
+}
+
+Light
+{
+	life				300 600
+
+	cullrange			8000
+
+	rgb
+	{
+		start			0.2824 0.1804 0.07451
+		end				0.2941 0.2157 0.1373
+		flags			linear
+	}
+
+	size
+	{
+		start			90 100
+		end			20 40
+		flags			random linear
+	}
+}

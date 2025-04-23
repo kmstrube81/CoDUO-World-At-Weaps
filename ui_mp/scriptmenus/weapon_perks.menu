@@ -1,0 +1,549 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_MENUTABS				32 30
+#define ORIGIN_MENUTABS_B			245 30
+#define ORIGIN_MENUTABS_C			458 30
+#define ORIGIN_MENUWINDOW_A			0 30
+#define ORIGIN_MENUWINDOW_B			213 30
+#define ORIGIN_MENUWINDOW_C			426 30
+#define ORIGIN_FOOTER				0 400
+#define ORIGIN_FOOTERTABS			32 430
+#define ORIGIN_LOADOUTPOINTS_B		213 370
+
+
+{
+	menuDef
+	{
+		name			"weapon_perks"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+		style			WINDOW_STYLE_EMPTY
+		onEsc 
+		{
+			open weapon_loadout;
+			hide button_perks_;
+			close weapon_perks;
+		}
+		onOpen 
+		{
+			hide button_perks_;
+			scriptMenuResponse "open";
+		}
+		onClose
+		{
+			scriptMenuResponse "close";
+		}
+		
+//HEADER		
+		itemDef
+		{
+			name			"header"
+			visible			1
+			rect			0 0 640 30
+			origin			0 0
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef
+		{
+			name 			"header_title"
+			visible			1
+			rect			32 0 181 30
+			origin			0 0
+			text			"Choose Perks"
+			textfont		UI_FONT_NORMAL
+			textscale		.35
+			textalignx		5
+			textaligny		24
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+//FOOTER
+		itemDef
+		{
+			name			"footer"
+			visible			1
+			rect			0 0 640 80
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef 
+		{
+			name			"footer_close"
+			visible			1
+			rect			0 0 213 30
+			origin			ORIGIN_FOOTERTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"0. Back"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open weapon_loadout;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "0" { play "mouse_click"; open weapon_loadout; close weapon_perks;  }	
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 640 384
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED 
+			backcolor		0 0 0 0.5
+			decoration
+		}
+// WINDOW LINES
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 2 370
+			origin			ORIGIN_MENUWINDOW_B
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+//-------------------------
+// MENU CHOICES
+//-------------------------
+//Thompson
+		itemDef 
+		{
+			name			"button_perk_tier1"
+			visible			1
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"1. Perk 1"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_tier1_perks"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "Perk1";
+				hide button_perks_;
+				show button_perks_tier1;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "1" { play "mouse_click"; scriptMenuResponse "Perk1"; hide button_perks_; show button_perks_tier1; }
+		itemDef 
+		{
+			name			"button_perk_tier1"
+			visible			1
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+//Sten
+		itemDef 
+		{
+			name			"button_perk_tier2"
+			visible			1
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"2. Perk 2"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_tier2_perk"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "Perk2";
+				hide button_perks_;
+				show button_perks_tier2;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "2" { play "mouse_click"; scriptMenuResponse "Perk2"; hide button_perks_; show button_perks_tier2;}
+		itemDef 
+		{
+			name			"button_perk_tier2"
+			visible			1
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+		
+		itemDef 
+		{
+			name			"button_perk_tier3"
+			visible			0
+			rect			0 90 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"3. Perk 3"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_tier3_perks"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "Perk3";
+				hide button_perks_;
+				show button_perks_tier3;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		//execKey "3" { play "mouse_click"; scriptMenuResponse "Perk3"; hide button_perks_; show button_perks_tier3; }
+		itemDef 
+		{
+			name			"button_perk_tier3"
+			visible			0
+			rect			0 90 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+//-------------------------
+// PERK CHOICES
+//-------------------------
+//TIER 1
+		itemDef 
+		{
+			name			"button_perks_tier1"
+			group			"button_perks_"
+			visible			0
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"a. None"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "nonePerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+//Extra Equipment
+		itemDef 
+		{
+			name			"button_perks_tier1"
+			group			"button_perks_"
+			visible			0
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"b. Equipment x2"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "bPerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_perks_tier1"
+			group			"button_perks_"
+			visible			0
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_extra_equipment_cost"
+			decoration
+		}
+//TIER 2
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"a. None"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "nonePerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+//Extra Smokes
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"b. Special Grenades x3"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "bPerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_extra_smoke_cost"
+			decoration
+		}
+//Extra Grenades
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 90 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"c. Grenades x3"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "cPerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 90 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_extra_grenade_cost"
+			decoration
+		}
+//Extra Ammo
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 120 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"d. Bandolier"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "dPerk";
+				open weapon_loadout;
+				hide button_perks_;
+				close weapon_perks;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_perks_tier2"
+			group			"button_perks_"
+			visible			0
+			rect			0 120 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_extra_ammo_cost"
+			decoration
+		}
+		execKey "a" { play "mouse_click"; scriptMenuResponse "nonePerk"; open weapon_loadout; hide button_perks_; close weapon_perks; }
+		execKey "b" { play "mouse_click"; scriptMenuResponse "bPerk"; open weapon_loadout; hide button_perks_; close weapon_perks; }
+		execKey "c" { play "mouse_click"; scriptMenuResponse "cPerk"; open weapon_loadout; hide button_perks_; close weapon_perks; }
+		execKey "d" { play "mouse_click"; scriptMenuResponse "dPerk"; open weapon_loadout; hide button_perks_; close weapon_perks; }
+// LOADOUT POINTS
+		itemDef
+		{
+			name			"text_loadoutpoints"
+			visible			1
+			rect			0 0 160 30
+			origin			ORIGIN_LOADOUTPOINTS_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_points_string"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}		
+// LOADOUT WARNING
+		itemDef
+		{
+			name			"text_loadoutwarning"
+			visible			1
+			rect			5 5 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_warning"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+	}
+}

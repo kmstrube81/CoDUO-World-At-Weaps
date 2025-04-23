@@ -1,0 +1,33 @@
+/*----------------
+Molotov Cocktail
+Chris_P
+-----------------*/
+
+Emitter
+{
+	flags				usePhysics emitFX impactfx
+
+	spawnFlags			axisFromSphere evenDistribution
+	
+	count				45
+	
+	life				150 300
+
+
+
+	velocity			123 622 622 73 -622 -622
+	
+	gravity				-600
+		
+	emitFX
+	[
+		fx/molotov/molotov_flames
+	]
+	impactfx
+	[
+		fx/smoke/ash_smoke	
+	
+	]
+}
+
+

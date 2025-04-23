@@ -1,0 +1,773 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_MENUTABS				32 30
+#define ORIGIN_MENUTABS_B			245 30
+#define ORIGIN_MENUTABS_C			458 30
+#define ORIGIN_MENUWINDOW_A			0 30
+#define ORIGIN_MENUWINDOW_B			213 30
+#define ORIGIN_MENUWINDOW_C			426 30
+#define ORIGIN_FOOTER				0 400
+#define ORIGIN_FOOTERTABS			32 430
+#define ORIGIN_LOADOUTPOINTS_B		213 370
+
+
+{
+	menuDef
+	{
+		name			"weapon_lightclass"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+		style			WINDOW_STYLE_EMPTY
+		onEsc 
+		{
+			open weapon_loadout;
+			hide button_attachment_;
+			close weapon_lightclass;
+		}
+		onOpen 
+		{
+			hide button_attachment_;
+			scriptMenuResponse "open";
+		}
+		onClose
+		{
+			scriptMenuResponse "close";
+		}
+		
+//HEADER		
+		itemDef
+		{
+			name			"header"
+			visible			1
+			rect			0 0 640 30
+			origin			0 0
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef
+		{
+			name 			"header_title"
+			visible			1
+			rect			32 0 181 30
+			origin			0 0
+			text			"Choose Primary Weapon"
+			textfont		UI_FONT_NORMAL
+			textscale		.35
+			textalignx		5
+			textaligny		24
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+//FOOTER
+		itemDef
+		{
+			name			"footer"
+			visible			1
+			rect			0 0 640 80
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef 
+		{
+			name			"footer_close"
+			visible			1
+			rect			0 0 213 30
+			origin			ORIGIN_FOOTERTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"0. Back"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open weapon_loadout;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "0" { play "mouse_click"; open weapon_loadout; close weapon_lightclass;  }	
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 640 384
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED 
+			backcolor		0 0 0 0.5
+			decoration
+		}
+// WINDOW LINES
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 2 370
+			origin			ORIGIN_MENUWINDOW_B
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+//-------------------------
+// MENU CHOICES
+//-------------------------
+//Thompson
+		itemDef 
+		{
+			name			"button_weapon_thompson"
+			visible			1
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"1. Thompson"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_thompson"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "thompson";
+				hide button_attachment_;
+				show button_attachment_thompson;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "1" { play "mouse_click"; scriptMenuResponse "thompson"; hide button_attachment_; show button_attachment_thompson; }
+		itemDef 
+		{
+			name			"button_weapon_thompson"
+			visible			1
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+//Sten
+		itemDef 
+		{
+			name			"button_weapon_sten"
+			visible			1
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"2. Sten"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_sten"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "sten";
+				hide button_attachment_;
+				show button_attachment_sten;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "2" { play "mouse_click"; scriptMenuResponse "sten"; hide button_attachment_; show button_attachment_sten;}
+		itemDef 
+		{
+			name			"button_weapon_sten"
+			visible			1
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+		
+		itemDef 
+		{
+			name			"button_weapon_ppsh"
+			visible			1
+			rect			0 90 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"3. PPSh41"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_ppsh"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "ppsh";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "3" { play "mouse_click"; scriptMenuResponse "ppsh"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }
+		itemDef 
+		{
+			name			"button_weapon_ppsh"
+			visible			1
+			rect			0 90 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_ppsh_cost"
+			decoration
+		}
+		itemDef 
+		{
+			name			"button_weapon_mp40"
+			visible			1
+			rect			0 120 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"4. MP40"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_mp40"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mp40";
+				hide button_attachment_;
+				show button_attachment_mp40;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "4" { play "mouse_click"; scriptMenuResponse "mp40"; hide button_attachment_; show button_attachment_mp40; }
+		itemDef 
+		{
+			name			"button_weapon_mp40"
+			visible			1
+			rect			0 120 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			text			"(... points)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			decoration
+		}
+//Greasegun
+		itemDef 
+		{
+			name			"button_weapon_greasegun"
+			visible			1
+			rect			0 150 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"5. Greasegun"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_greasegun"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "greasegun";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "5" { play "mouse_click"; scriptMenuResponse "greasegun"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }		
+		itemDef 
+		{
+			name			"button_weapon_greasegun"
+			visible			1
+			rect			0 150 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_greasegun_cost"
+			decoration
+		}
+//PPS43
+		itemDef 
+		{
+			name			"button_weapon_pps43"
+			visible			1
+			rect			0 180 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"6. PPS43"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_pps43"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "pps43";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "6" { play "mouse_click"; scriptMenuResponse "pps43"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }
+		itemDef 
+		{
+			name			"button_weapon_pps43"
+			visible			1
+			rect			0 180 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_pps43_cost"
+			decoration
+		}
+//-------------------------
+// ATTACHMENT CHOICES
+//-------------------------
+//Thompson
+//No Attachemnt
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"a. None (M1A1)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_thompson"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentA";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_thompson_cost"
+			decoration
+		}
+//Silenced
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"b. Silencer (M1928)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_thompson_silenced"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentB";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_thompson_silenced_cost"
+			decoration
+		}
+//Drum
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 90 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"c. Drum (M1928)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_thompson_drum"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentC";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_thompson"
+			group			"button_attachment_"
+			visible			0
+			rect			0 90 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_thompson_drum_cost"
+			decoration
+		}
+//Sten
+//No Attachemnt
+		itemDef 
+		{
+			name			"button_attachment_sten"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"a. None"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_sten"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentA";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_sten"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_sten_cost"
+			decoration
+		}
+		itemDef 
+		{
+			name			"button_attachment_sten"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"b. Silencer"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_sten_silenced"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentB";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_sten"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_sten_silenced_cost"
+			decoration
+		}
+//MP40
+//No Attachemnt
+		itemDef 
+		{
+			name			"button_attachment_mp40"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"a. None"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_mp40"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentA";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_mp40"
+			group			"button_attachment_"
+			visible			0
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_mp40_cost"
+			decoration
+		}
+		itemDef 
+		{
+			name			"button_attachment_mp40"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS_B
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"b. Silencer"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_mp40_silenced"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "AttachmentB";
+				open weapon_loadout;
+				hide button_attachment_;
+				close weapon_lightclass;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_attachment_mp40"
+			group			"button_attachment_"
+			visible			0
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_mp40_silenced_cost"
+			decoration
+		}
+		execKey "a" { play "mouse_click"; scriptMenuResponse "AttachmentA"; open weapon_loadout; hide button_attachment_sten; close weapon_lightclass; }
+		execKey "b" { play "mouse_click"; scriptMenuResponse "AttachmentB"; open weapon_loadout; hide button_attachment_sten; close weapon_lightclass; }
+		execKey "c" { play "mouse_click"; scriptMenuResponse "AttachmentC"; open weapon_loadout; hide button_attachment_sten; close weapon_lightclass; }
+// LOADOUT POINTS
+		itemDef
+		{
+			name			"text_loadoutpoints"
+			visible			1
+			rect			0 0 160 30
+			origin			ORIGIN_LOADOUTPOINTS_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_points_string"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}		
+// LOADOUT WARNING
+		itemDef
+		{
+			name			"text_loadoutwarning"
+			visible			1
+			rect			5 5 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_warning"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+	}
+}

@@ -1,0 +1,376 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_MENUTABS				32 30
+#define ORIGIN_MENUTABS_B			245 30
+#define ORIGIN_MENUTABS_C			458 30
+#define ORIGIN_MENUWINDOW_A			0 30
+#define ORIGIN_MENUWINDOW_B			213 30
+#define ORIGIN_MENUWINDOW_C			426 30
+#define ORIGIN_FOOTER				0 400
+#define ORIGIN_FOOTERTABS			32 430
+#define ORIGIN_LOADOUTPOINTS_B		213 370
+
+{
+	menuDef
+	{
+		name			"weapon_grenade"
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+		style			WINDOW_STYLE_EMPTY
+		onEsc 
+		{
+			open weapon_loadout;
+			close weapon_grenade;
+		}
+		onOpen 
+		{
+			scriptMenuResponse "open";
+		}
+		onClose
+		{
+			scriptMenuResponse "close";
+		}
+		
+//HEADER		
+		itemDef
+		{
+			name			"header"
+			visible			1
+			rect			0 0 640 30
+			origin			0 0
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef
+		{
+			name 			"header_title"
+			visible			1
+			rect			32 0 181 30
+			origin			0 0
+			text			"Choose Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.35
+			textalignx		5
+			textaligny		24
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+//FOOTER
+		itemDef
+		{
+			name			"footer"
+			visible			1
+			rect			0 0 640 80
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+		itemDef 
+		{
+			name			"footer_close"
+			visible			1
+			rect			0 0 213 30
+			origin			ORIGIN_FOOTERTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"0. Back"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "0" { play "mouse_click"; open weapon_loadout; close weapon_grenade; }	
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 640 384
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED 
+			backcolor		0 0 0 0.5
+			decoration
+		}
+// WINDOW LINES
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_MENUWINDOW_A
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 640 2
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 2 370
+			origin			ORIGIN_MENUWINDOW_B
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+//-------------------------
+// MENU CHOICES
+//-------------------------
+//Frag Grenade
+		itemDef 
+		{
+			name			"button_weapon_frag"
+			visible			1
+			rect			0 30 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"1. Mk2 Frag Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_frag"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "fraggrenade";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "1" { play "mouse_click"; scriptMenuResponse "fraggrenade"; open weapon_loadout; close weapon_grenade; }
+		itemDef 
+		{
+			name			"button_weapon_frag"
+			visible			1
+			rect			0 30 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_fraggrenade_cost"
+			decoration
+		}
+//British Frag
+		itemDef 
+		{
+			name			"button_weapon_mk1britishfrag"
+			visible			1
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"2. Mk1 British Frag Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_mk1britishfrag"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mk1britishfrag";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "2" { play "mouse_click"; scriptMenuResponse "mk1britishfrag"; open weapon_loadout; close weapon_grenade; }
+		itemDef 
+		{
+			name			"button_weapon_mk1britishfrag"
+			visible			1
+			rect			0 75 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_mk1britishfraggrenade_cost"
+			decoration
+		}
+		itemDef 
+		{
+			name			"button_weapon_rgd-33"
+			visible			1
+			rect			0 90 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"3. RGD-33 Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_rgd-33"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "rgd-33russianfrag";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "3" { play "mouse_click"; scriptMenuResponse "rgd-33russianfrag"; open weapon_loadout; close weapon_grenade; }
+		itemDef 
+		{
+			name			"button_weapon_rgd-33russianfrag"
+			visible			1
+			rect			0 90 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_rgd33russianfraggrenade_cost"
+			decoration
+		}
+		itemDef 
+		{
+			name			"button_weapon_stielhandgranate"
+			visible			1
+			rect			0 120 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"4. Stielhandgranate"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_stielhandgranate"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "stielhandgranate";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "4" { play "mouse_click"; scriptMenuResponse "stielhandgranate"; open weapon_loadout; close weapon_grenade; }
+		itemDef 
+		{
+			name			"button_weapon_stielhandgranate"
+			visible			1
+			rect			0 120 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_stielhandgranate_cost"
+			decoration
+		}
+		//flamer
+		itemDef 
+		{
+			name			"button_weapon_none"
+			visible			1
+			rect			0 270 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"9. None"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "noneGrenade";
+				open weapon_loadout;
+				close weapon_grenade;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "9" { play "mouse_click"; scriptMenuResponse "noneGrenade"; open weapon_loadout; close weapon_grenade; }
+// LOADOUT POINTS
+		itemDef
+		{
+			name			"text_loadoutpoints"
+			visible			1
+			rect			0 0 213 30
+			origin			ORIGIN_LOADOUTPOINTS_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_points_string"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+// LOADOUT WARNING
+		itemDef
+		{
+			name			"text_loadoutwarning"
+			visible			1
+			rect			5 5 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			autowrapped
+			cvar			"player_loadout_warning"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			decoration
+		}
+	}
+}

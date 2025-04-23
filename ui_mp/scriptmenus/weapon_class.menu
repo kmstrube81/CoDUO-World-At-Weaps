@@ -1,0 +1,1752 @@
+#include "ui_mp/menudef.h"
+
+#define ORIGIN_LOADOUT				426 0
+#define ORIGIN_MENUTABS				32 30
+#define ORIGIN_MENUWINDOW_A			0 30
+#define ORIGIN_MENUWINDOW_B			213 30
+#define ORIGIN_MENUWINDOW_C			426 30
+#define ORIGIN_FOOTER				426 400
+#define ORIGIN_FOOTERTABS			32 430
+
+
+{
+	menuDef
+	{
+		name			"weapon_class"
+		fullscreen		0
+		rect			426 0 214 480
+		focuscolor		1 1 1 1
+		disablecolor		0 0 0 0
+		style			WINDOW_STYLE_EMPTY
+		onEsc 
+		{
+			open weapon_loadout;
+			close weapon_class;
+		}
+		onOpen 
+		{
+			scriptMenuResponse "open";
+		}
+		onClose
+		{
+			scriptMenuResponse "close";
+		}
+		
+//HEADER		
+		itemDef
+		{
+			name			"header"
+			visible			1
+			rect			0 0 214 30
+			origin			ORIGIN_LOADOUT
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}
+//FOOTER
+		itemDef
+		{
+			name			"footer"
+			visible			1
+			rect			0 0 214 80
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 1
+			decoration
+		}	
+// WINDOW BACKGROUND
+		itemDef
+		{
+			name			"window_background"
+			visible			1
+			rect			0 0 214 384
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED 
+			backcolor		0 0 0 0.5
+			decoration
+		}
+// WINDOW LINES
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 214 2
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+		itemDef
+		{
+			name			"window_lines"
+			visible			1
+			rect			0 0 214 2
+			origin			ORIGIN_FOOTER
+			style			WINDOW_STYLE_FILLED
+			backcolor		1 1 1 .125
+			decoration
+		}
+// LOADOUT PRIMARY
+		itemDef
+		{
+			name			"box_primary"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"text_primary"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Primary"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+// LOADOUT SECONDARY
+		itemDef
+		{
+			name			"box_secondary"
+			visible			1
+			rect			1 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_pistols"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_secondary"
+			visible			1
+			rect			1 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Sidearm"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_pistols"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+// LOADOUT GRENADE
+		itemDef
+		{
+			name			"box_grenade_primary"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			3
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_grenades"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_grenade_primary"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Grenade"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_grenades"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+		itemDef
+		{
+			name			"box_grenade_secondary"
+			visible			1
+			rect			1 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			3
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_smoke"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_grenade_secondary"
+			visible			1
+			rect			1 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Secondary Grenade"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_smoke"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+// LOADOUT EQUIPMENT
+		itemDef
+		{
+			name			"box_equipment"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			3
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_satchel"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_eqipment"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Equipment"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_satchel"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+// LOADOUT SKILL
+		itemDef
+		{
+			name			"box_skill"
+			visible			0
+			rect			1 283 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			3
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_skills"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_skill"
+			visible			0
+			rect			1 283 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Skill"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_skills"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+// LOADOUT KILLSTREAK
+		itemDef
+		{
+			name			"box_killstreak"
+			visible			0
+			rect			101 283 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			3
+			bordercolor		0.1 0.1 0.1 1
+			cvartest		"ui_allow_killstreaks"
+			hideCvar		{ "0" }
+			decoration
+		}
+		itemDef
+		{
+			name			"text_killstreak"
+			visible			0
+			rect			101 283 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"Killstreak Reward"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textaligny		10
+			textscale		.16
+			cvartest		"ui_allow_killstreaks"
+			hideCvar		{ "0" }
+			textalign		ITEM_ALIGN_LEFT
+			decoration
+		}
+//-------------------------
+// LOADOUT DECORATIONS
+//-------------------------
+//M1 Carbine
+		itemDef
+		{
+			name			"decoration_primary_m1carbine"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m1carbine.tga"
+			backcolor		0 0 0 0.74
+			text			"M1A1 Carbine"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m1carbine_mp" }
+			decoration
+		}
+//M2 Carbine
+		itemDef
+		{
+			name			"decoration_primary_m2carbine"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m2carbine.dds"
+			backcolor		0 0 0 0.74
+			text			"M2 Carbine (Selective Fire)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m2_mp" }
+			decoration
+		}
+//M3 Carbine
+		itemDef
+		{
+			name			"decoration_primary_m3carbine"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m3.tga"
+			backcolor		0 0 0 0.74
+			text			"M3 Carbine (Sniper Scope)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m3_mp" }
+			decoration
+		}
+//M1 Garand
+		itemDef
+		{
+			name			"decoration_primary_m1garand"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m1garand.tga"
+			backcolor		0 0 0 0.74
+			text			"M1 Garand"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m1garand_mp" }
+			decoration
+		}
+//M1 Garand Scoped
+		itemDef
+		{
+			name			"decoration_primary_m1garandsniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m1garand_sniper.tga"
+			backcolor		0 0 0 0.74
+			text			"M1 Garand (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "scopedm1garand_mp" }
+			decoration
+		}
+//M1 Garand Grenade Launcher
+		itemDef
+		{
+			name			"decoration_primary_m1garandgrenade"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m1garand_launcher.dds"
+			backcolor		0 0 0 0.74
+			text			"M1 Garand (Grenade Launcher)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m1garand_g_mp" }
+			decoration
+		}
+//Thompson
+		itemDef
+		{
+			name			"decoration_primary_thompson"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@thompson.tga"
+			backcolor		0 0 0 0.74
+			text			"M1A1 Thompson"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "thompson_mp" }
+			decoration
+		}
+//Thompson Silenced
+		itemDef
+		{
+			name			"decoration_primary_thompson_silenced"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@thompson_M1928_silenced.dds"
+			backcolor		0 0 0 0.74
+			text			"M1928 Thompson (Silenced)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "tommy2_mp" }
+			decoration
+		}
+//Thompson Drum
+		itemDef
+		{
+			name			"decoration_primary_thompson_drum"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@thompson_M1928.dds"
+			backcolor		0 0 0 0.74
+			text			"M1928 Thompson (Drum)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "tommy_mp" }
+			decoration
+		}
+//Greasegun
+		itemDef
+		{
+			name			"decoration_primary_greasegun"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@greaser.dds"
+			backcolor		0 0 0 0.74
+			text			"Greasegun"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "greasegun_mp" }
+			decoration
+		}
+//UD42
+		itemDef
+		{
+			name			"decoration_primary_ud42"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@ud42.tga"
+			backcolor		0 0 0 0.74
+			text			"UD42"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "ud42_mp" }
+			decoration
+		}
+//BAR
+		itemDef
+		{
+			name			"decoration_primary_bar"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@bar.tga"
+			backcolor		0 0 0 0.74
+			text			"M1918A1 BAR"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "bar_mp" }
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_bar_bipod"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@bar2.dds"
+			backcolor		0 0 0 0.74
+			text			"M1918A2 BAR (Bipod)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "bar2_mp" }
+			decoration
+		}
+//Springfield
+		itemDef
+		{
+			name			"decoration_primary_m1903a3"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m1903a3.tga"
+			backcolor		0 0 0 0.74
+			text			"M1903A3 Springfield"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "m1903a3_mp" }
+			decoration
+		}
+//Springfield
+		itemDef
+		{
+			name			"decoration_primary_springfield"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@springfield.tga"
+			backcolor		0 0 0 0.74
+			text			"Springfield"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "springfield_mp" }
+			decoration
+		}
+//MG 30 Cal
+		itemDef
+		{
+			name			"decoration_primary_30cal"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@30cal.dds"
+			backcolor		0 0 0 0.74
+			text			"M1919A6 .30cal"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mg30cal_mp" }
+			decoration
+		}
+//M1897 Trenchgun
+		itemDef
+		{
+			name			"decoration_primary_trenchgun"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@trenchgun.dds"
+			backcolor		0 0 0 0.74
+			text			"M1897 Trenchgun"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "trenchgun_mp" }
+			decoration
+		}	
+//Lee Enfield
+		itemDef
+		{
+			name			"decoration_primary_enfield"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@enfield.tga"
+			backcolor		0 0 0 0.74
+			text			"Lee-Enfield"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "enfield_mp" }
+			decoration
+		}
+//Lee Enfield Sniper
+		itemDef
+		{
+			name			"decoration_primary_enfield_sniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@enfieldscoped.tga"
+			backcolor		0 0 0 0.74
+			text			"Lee-Enfield (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "enfieldscoped_mp" }
+			decoration
+		}
+//De Lisle
+		itemDef
+		{
+			name			"decoration_primary_delisle"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@delisle.tga"
+			backcolor		0 0 0 0.74
+			text			"De Lisle Carbine (Silenced)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "delisle_mp" }
+			decoration
+		}
+//Sten
+		itemDef
+		{
+			name			"decoration_primary_sten"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@sten.tga"
+			backcolor		0 0 0 0.74
+			text			"Sten"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "sten_mp" }
+			decoration
+		}
+//Sten (Silenced)
+		itemDef
+		{
+			name			"decoration_primary_sten_silenced"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@sten_silent.dds"
+			backcolor		0 0 0 0.74
+			text			"Sten (Silenced)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "sten_silenced_mp" }
+			decoration
+		}
+//Sten Mk V
+		itemDef
+		{
+			name			"decoration_primary_stenmk5"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@stenmk5.tga"
+			backcolor		0 0 0 0.74
+			text			"Sten Mk V"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "stenmk5_mp" }
+			decoration
+		}
+//Bren
+		itemDef
+		{
+			name			"decoration_primary_bren"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@bren.tga"
+			backcolor		0 0 0 0.74
+			text			"Bren LMG"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "bren_mp" }
+			decoration
+		}
+//Mosin
+		itemDef
+		{
+			name			"decoration_primary_mosin"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@nagant.tga"
+			backcolor		0 0 0 0.74
+			text			"Mosin-Nagant"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mosin_nagant_mp" }
+			decoration
+		}
+//Mosin Scoped
+		itemDef
+		{
+			name			"decoration_primary_mosin_sniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@nagantscoped.tga"
+			backcolor		0 0 0 0.74
+			text			"Mosin-Nagant (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mosin_nagant_sniper_mp" }
+			decoration
+		}
+//PTRS
+		itemDef
+		{
+			name			"decoration_primary_ptrs"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@ptrs.tga"
+			backcolor		0 0 0 0.74
+			text			"PTRS 41"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "ptrs_mp" }
+			decoration
+		}
+//PPSh41 stick
+		itemDef
+		{
+			name			"decoration_primary_ppsh_stick"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@ppshstick.dds"
+			backcolor		0 0 0 0.74
+			text			"PPSh41"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "ppshstick_mp" }
+			decoration
+		}
+//PPSh41
+		itemDef
+		{
+			name			"decoration_primary_ppsh"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@ppsh.tga"
+			backcolor		0 0 0 0.74
+			text			"PPSh41 (Drum)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "ppsh_mp" }
+			decoration
+		}
+//PPS43
+		itemDef
+		{
+			name			"decoration_primary_pps43"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@pps43.dds"
+			backcolor		0 0 0 0.74
+			text			"PPS43"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "pps43_mp" }
+			decoration
+		}
+//SVT-40
+		itemDef
+		{
+			name			"decoration_primary_svt40"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@svt40.dds"
+			backcolor		0 0 0 0.74
+			text			"Tokarev SVT40"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "svt40_mp" }
+			decoration
+		}
+//SVT-40 Scoped
+		itemDef
+		{
+			name			"decoration_primary_svt40sniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@svt40.dds"
+			backcolor		0 0 0 0.74
+			text			"Tokarev SVT40 (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "svt40_scoped_mp" }
+			decoration
+		}
+//DP28
+		itemDef
+		{
+			name			"decoration_primary_dp28"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@dp28.dds"
+			backcolor		0 0 0 0.74
+			text			"Degtyarev DP28"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "dp28_mp" }
+			decoration
+		}
+//Kar98k
+		itemDef
+		{
+			name			"decoration_primary_kar98k"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@kar98.tga"
+			backcolor		0 0 0 0.74
+			text			"Kar98k"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "kar98k_mp" }
+			decoration
+		}
+//Kar98k Sniper
+		itemDef
+		{
+			name			"decoration_primary_kar98k_sniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@kar98scoped.tga"
+			backcolor		0 0 0 0.74
+			text			"Kar98k (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "kar98k_sniper_mp" }
+			decoration
+		}
+//MP40
+		itemDef
+		{
+			name			"decoration_primary_mp40"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp40.tga"
+			backcolor		0 0 0 0.74
+			text			"MP40"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mp40_mp" }
+			decoration
+		}
+//MP40
+		itemDef
+		{
+			name			"decoration_primary_mp40_silenced"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp40_silenced.dds"
+			backcolor		0 0 0 0.74
+			text			"MP40 (Silencer)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mp40_silenced_mp" }
+			decoration
+		}
+//MP18
+		itemDef
+		{
+			name			"decoration_primary_mp18"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp18.dds"
+			backcolor		0 0 0 0.74
+			text			"MP18"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mp18_mp" }
+			decoration
+		}
+//MP18
+		itemDef
+		{
+			name			"decoration_primary_mp18_silenced"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp18_silenced.dds"
+			backcolor		0 0 0 0.74
+			text			"MP18 (Silencer)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mp18_silenced_mp" }
+			decoration
+		}
+//MP44
+		itemDef
+		{
+			name			"decoration_primary_mp44"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp44.tga"
+			backcolor		0 0 0 0.74
+			text			"MP44"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mp44_mp" }
+			decoration
+		}
+//MP44
+		itemDef
+		{
+			name			"decoration_primary_mp44_scoped"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp44_scoped.dds"
+			backcolor		0 0 0 0.74
+			text			"MP44 (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "scopedmp44_mp" }
+			decoration
+		}
+		
+//Gewehr 43
+		itemDef
+		{
+			name			"decoration_primary_gewehr43"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@G43.dds"
+			backcolor		0 0 0 0.74
+			text			"Gewehr 43"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "gewehr43_mp" }
+			decoration
+		}
+//Gewehr 43 Scoped
+		itemDef
+		{
+			name			"decoration_primary_gewehr43sniper"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@G43s.tga"
+			backcolor		0 0 0 0.74
+			text			"Gewehr 43 (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "gewehr43_scoped_mp" }
+			decoration
+		}
+//Gewehr 43 Grenade
+		itemDef
+		{
+			name			"decoration_primary_gewehr43grenade"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@g43_g.tga"
+			backcolor		0 0 0 0.74
+			text			"Gewehr 43 (Grenade Launcher)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "gewehr43_g_mp" }
+			decoration
+		}
+//MG34
+		itemDef
+		{
+			name			"decoration_primary_mg34"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mg34.dds"
+			backcolor		0 0 0 0.74
+			text			"MG34"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "mg34_mp" }
+			decoration
+		}
+//FG42
+		itemDef
+		{
+			name			"decoration_primary_fg42"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@fg42.dds"
+			backcolor		0 0 0 0.74
+			text			"FG42"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "fg42_mp" }
+			decoration
+		}
+//FG42
+		itemDef
+		{
+			name			"decoration_primary_fg42_scoped"
+			visible			1
+			rect			0 3 200 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@fg42.tga"
+			backcolor		0 0 0 0.74
+			text			"FG42 (Scoped)"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			cvarTest		"ui_primary_selected"
+			showCvar		{ "fg42_scoped_mp" }
+			decoration
+		}
+//-------------------------
+// SIDEARM WEAPONS
+//-------------------------
+//M1911
+		itemDef
+		{
+			name			"decoration_primary_colt"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@colt45.dds"
+			backcolor		0 0 0 0.74
+			text			"Colt M1911"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "colt_mp" }
+			decoration
+		}
+//Webley
+		itemDef
+		{
+			name			"decoration_primary_webley"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@webly.dds"
+			backcolor		0 0 0 0.74
+			text			"Webley Mk IV"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "webley_mp" }
+			decoration
+		}
+//TT33
+		itemDef
+		{
+			name			"decoration_primary_tt33"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@tt33.dds"
+			backcolor		0 0 0 0.74
+			text			"Tokarev TT33"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "tt33_mp" }
+			decoration
+		}
+//Luger
+		itemDef
+		{
+			name			"decoration_primary_luger"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@luger.dds"
+			backcolor		0 0 0 0.74
+			text			"Luger"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "luger_mp" }
+			decoration
+		}
+//Walther
+		itemDef
+		{
+			name			"decoration_primary_walther"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@p38.dds"
+			backcolor		0 0 0 0.74
+			text			"Walther P38"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "walther_mp" }
+			decoration
+		}
+//Welrod
+		itemDef
+		{
+			name			"decoration_primary_welrod"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@welrod.dds"
+			backcolor		0 0 0 0.74
+			text			"Welrod Silenced Pistol"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "welrod_mp" }
+			decoration
+		}
+//Mauser
+		itemDef
+		{
+			name			"decoration_primary_mauser"
+			visible			1
+			rect			0 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mauser.dds"
+			backcolor		0 0 0 0.74
+			text			"Mauser M712"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_sidearm_selected"
+			showCvar		{ "m712_mp" }
+			decoration
+		}		
+//-------------------------
+// GRENADE DECORATIONS
+//-------------------------
+//Mk2 Frag
+		itemDef
+		{
+			name			"decoration_primary_frag"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@us_grenade.tga"
+			backcolor		0 0 0 0.74
+			text			"Mk2 Frag Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_grenade_selected"
+			showCvar		{ "fraggrenade_mp" }
+			decoration
+		}
+//British Frag
+		itemDef
+		{
+			name			"decoration_primary_mk1britishfrag"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@british_grenade.tga"
+			backcolor		0 0 0 0.74
+			text			"Mk1 British Frag Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_grenade_selected"
+			showCvar		{ "mk1britishfrag_mp" }
+			decoration
+		}
+//RGD-33
+		itemDef
+		{
+			name			"decoration_primary_rdg-33"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@russian_grenade.tga"
+			backcolor		0 0 0 0.74
+			text			"RGD-33 Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_grenade_selected"
+			showCvar		{ "rgd-33russianfrag_mp" }
+			decoration
+		}
+//Stielhandgranate
+		itemDef
+		{
+			name			"decoration_primary_stielhandgranate"
+			visible			1
+			rect			101 111 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@steilhandgrenate.tga"
+			backcolor		0 0 0 0.74
+			text			"Stielhandgranate"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_grenade_selected"
+			showCvar		{ "stielhandgranate_mp" }
+			decoration
+		}
+//-------------------------
+// SMOKE DECORATIONS
+//-------------------------
+//Smoke
+		itemDef
+		{
+			name			"decoration_primary_smoke"
+			visible			1
+			rect			0 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@us_smokegrenade.dds"
+			backcolor		0 0 0 0.74
+			text			"Smoke Grenade"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_smoke_selected"
+			showCvar		{ "smokegrenade_mp" }
+			decoration
+		}
+//Molotov
+		itemDef
+		{
+			name			"decoration_primary_molotov"
+			visible			1
+			rect			0 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@cocktail.tga"
+			backcolor		0 0 0 0.74
+			text			"Molotov Cocktail"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_smoke_selected"
+			showCvar		{ "cocktail_mp" }
+			decoration
+		}
+//Mustard Gas
+		itemDef
+		{
+			name			"decoration_primary_mustardgas"
+			visible			1
+			rect			0 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@chemnadeicon.tga"
+			backcolor		0 0 0 0.74
+			text			"Mustard Gas"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_smoke_selected"
+			showCvar		{ "mustardgas_mp" }
+			decoration
+		}
+//-------------------------
+// EQUIPMENT DECORATIONS
+//-------------------------
+//Satchel
+		itemDef
+		{
+			name			"decoration_primary_satchel"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@satchel.dds"
+			backcolor		0 0 0 0.74
+			text			"Satchel Charge"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "satchelcharge_mp" }
+			decoration
+		}
+//Geballte
+		itemDef
+		{
+			name			"decoration_primary_geballte"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@geballte_ladung.dds"
+			backcolor		0 0 0 0.74
+			text			"Geballte Lathing"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "german_smoke_mp" }
+			decoration
+		}
+//Panzerfaust
+		itemDef
+		{
+			name			"decoration_primary_panzerfaust"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@panzerfaust.tga"
+			backcolor		0 0 0 0.74
+			text			"Panzerfaust"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "panzerfaust_equip_mp" }
+			decoration
+		}
+//Panzerschreck
+		itemDef
+		{
+			name			"decoration_primary_panzerschreck"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@panzerschreck.tga"
+			backcolor		0 0 0 0.74
+			text			"Panzerschreck"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "panzerschreck_equip_mp" }
+			decoration
+		}
+//Bazooka
+		itemDef
+		{
+			name			"decoration_primary_bazooka"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@bazooka.tga"
+			backcolor		0 0 0 0.74
+			text			"Bazooka"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "bazooka_equip_mp" }
+			decoration
+		}
+//PIAT
+		itemDef
+		{
+			name			"decoration_primary_piat"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@piat.tga"
+			backcolor		0 0 0 0.74
+			text			"PIAT"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "piat_equip_mp" }
+			decoration
+		}
+//Flamethrower
+		itemDef
+		{
+			name			"decoration_primary_flamethrower"
+			visible			1
+			rect			101 197 98 84
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@flame_pickup.dds"
+			backcolor		0 0 0 0.74
+			text			"Flammenwerfer 35"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		84
+			cvarTest		"ui_equipment_selected"
+			showCvar		{ "flamethrower_equip_mp" }
+			decoration
+		}
+	}
+}

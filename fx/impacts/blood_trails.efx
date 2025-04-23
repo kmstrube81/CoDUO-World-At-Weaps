@@ -1,0 +1,85 @@
+Tail
+{
+	flags				usePhysics
+
+	spawnFlags			orgOnSphere axisFromSphere impactFX impactKills
+
+	count				4
+
+	life				522
+
+	bounce				0.4
+
+	velocity			123 133 133 123 -133 -133
+
+	gravity				-322
+
+	size
+	{
+		start			2
+	}
+
+	length
+	{
+		start			3
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/impact/flesh_hit1
+		gfx/impact/blood_splat
+	]
+	impactFX
+	[
+		fx/impacts/bloodfx
+		fx/impacts/bloodfx_lg
+	]
+}
+
+Tail
+{
+	name				Copy of Unnamed Tail 0
+
+	flags				usePhysics impactKills impactFX
+
+	spawnFlags			orgOnSphere axisFromSphere
+
+	count				4
+
+	life				522
+
+	bounce				0.4
+
+	velocity			123 133 133 223 0 0
+
+	gravity				-322
+
+	alpha
+	{
+		end				0
+	}
+
+	size
+	{
+		start			3
+	}
+
+	length
+	{
+		start			9
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/impact/flesh_hitgib
+		gfx/impact/blood_splatter2
+	]
+	
+	impactFX
+	[
+		fx/impacts/bloodfx
+		fx/impacts/bloodfx_giant
+	]
+}

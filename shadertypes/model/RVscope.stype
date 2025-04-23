@@ -1,0 +1,13 @@
+{ 
+	surfaceparm metal
+
+	{ 
+		//map $texturename
+		map skins\RVscope@Reddot.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+		depthWrite
+
+	} 
+} 
+

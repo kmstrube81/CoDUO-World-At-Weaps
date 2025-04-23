@@ -1,0 +1,56 @@
+FxRunner
+{
+	playfx
+	[
+		fx/impacts/neck_squirt_3
+	]
+}
+
+FxRunner
+{
+	name				Copy of Unnamed FxRunner 0
+
+	delay				1200
+
+	playfx
+	[
+		fx/impacts/neck_squirt_2
+	]
+}
+
+FxRunner
+{
+	name				Copy of Copy of Unnamed FxRunne
+
+	delay				2400
+
+	playfx
+	[
+		fx/impacts/neck_squirt_2
+	]
+}
+
+FxRunner
+{
+	name				Copy of Copy of Copy of Unnamed
+
+	delay				5000
+
+	playfx
+	[
+		fx/impacts/neck_squirt_1
+	]
+}
+
+FxRunner
+{
+	name				Copy of Copy of Copy of Copy of
+
+
+	delay				7000
+
+	playfx
+	[
+		fx/impacts/neck_squirt_1
+	]
+}

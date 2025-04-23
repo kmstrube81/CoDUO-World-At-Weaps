@@ -1,0 +1,11 @@
+{
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	cull none
+	{
+		map $texturename
+		rgbGen lightingDiffuse
+		alphaFunc ge128
+		depthWrite
+	}
+}

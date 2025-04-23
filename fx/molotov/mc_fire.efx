@@ -1,0 +1,65 @@
+
+Particle
+{
+	name				Copy of Unnamed Particle 0
+
+	flags				usePhysics SetShaderTime deathFX
+	
+	spawnflags			rgbComponentInterpolation
+	
+	count 				1 3
+	
+	delay				0 500
+	
+	wind				90 120
+	
+	life				800 1000
+	
+	angle 			0 360 0 0 -360 0
+	
+	rgb
+	{
+		start			.5 .5 .5
+		flags			linear
+	}
+
+	alpha
+	{
+		start			.7 1
+		end			0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			5 12
+		end			20 35
+		flags			linear 
+	}
+
+	size2
+	{
+		start			7 15
+		end			20 30
+		flags			linear
+	}
+
+	shaders
+	[
+		fire/flame_lick_a
+		fire/flame_lick_b
+		fire/flame_lick_c
+		fire/flame_lick_d
+		fire/flame_lick_e
+		fire/flame_lick_f
+	]
+
+	deathFX
+	[
+		fx/smoke/ash_smoke
+	]
+
+}
+
+

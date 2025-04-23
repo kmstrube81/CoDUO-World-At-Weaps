@@ -1,0 +1,31 @@
+//   ____  _                 _ ________   __                   
+//  |  _ \| |               | |  ____\ \ / /                   
+//  | |_) | | ___   ___   __| | |__   \ \ /                    
+//  |  _ <| |/ _ \ / _ \ / _` |  __|   \ \                     
+//  | |_) | | (_) | (_) | (_| | |     / \ \                    
+//  |____/|_|\___/ \___/ \__,_|_|    /_/ \_\
+//  
+//  A Merciless Creation by Chris_P
+//
+//////////////////////////////////////////////////////////
+
+particle
+{
+	flags				impactKills usePhysics impactFX
+
+	life				1000
+	
+	origin 			0 0 1
+	
+	gravity			-800
+
+	size
+	{
+		flags			linear
+	}
+	
+	impactFX
+	[
+		fx/impacts/blood_pools
+	]
+}

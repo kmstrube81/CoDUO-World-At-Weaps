@@ -1,0 +1,134 @@
+Particle
+{
+	name				neck_squirt
+
+	flags				usePhysics impactKills useAlpha
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				8
+
+	life				500 900
+
+	delay				0 150
+
+	velocity			130 -1 -1 100 1 1
+
+	acceleration		-100 0 0
+
+	gravity				-200
+
+	rgb
+	{
+		start			0.302 0.102 0.102
+		end				0.502 0 0
+	}
+
+	alpha
+	{
+		start			0.5
+		end				0
+		parm			40 60
+		flags			nonlinear
+	}
+
+	shaders
+	[
+		gfx/impact/blood_splat
+		gfx/impact/blood_splat3
+	]
+}
+
+Particle
+{
+	name				blood_Stream
+
+	flags				usePhysics impactKills impactFx useAlpha
+
+	life				800
+
+	velocity			130 0 0 110 0 0
+
+	acceleration		-100 0 0
+
+	gravity				-200
+
+	rgb
+	{
+		start			0.8235 0 0 0.3922 0 0
+		end				0.8353 0 0 0.502 0 0
+	}
+
+	alpha
+	{
+		start			0.1
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			1 2
+		end				0.5
+	}
+
+	shaders
+	[
+		gfx/impact/blood_splat
+	]
+
+	impactfx
+	[
+		fx/impacts/bloodfx_lg
+	]
+}
+
+Tail
+{
+	flags				usePhysics impactKills useAlpha
+
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				14
+
+	life				500 900
+
+	delay				0 200
+
+	velocity			130 -1 -1 110 1 1
+
+	acceleration		-100 0 0
+
+	gravity				-200
+
+	rgb
+	{
+		start			0.5333 0.08235 0.08235 0.3725 0.06275 0.06275
+	}
+
+	alpha
+	{
+		start			0.6
+		end				0
+		parm			30
+		flags			nonlinear
+	}
+
+	size
+	{
+		start			0.5 0.6
+		end				1.5 1
+	}
+
+	length
+	{
+		start			10
+		end				2
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/effects/blood_plume
+	]
+}

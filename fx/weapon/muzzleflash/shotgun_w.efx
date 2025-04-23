@@ -1,0 +1,200 @@
+Particle
+{
+	name				smoke_front_fractal
+
+	flags				useAlpha
+
+	count				1
+
+	life				150
+
+	origin				0 0 0 36 0 0
+
+	rotation			0 360
+
+	rotationDelta		-15 15
+
+	velocity			0 -30 -30 90 30 30
+
+	gravity				0 100
+
+	rgb
+	{
+		start			0.7412 0.7765 0.749
+		end				0.1961 0.1922 0.2
+		flags			linear
+	}
+
+	alpha
+	{
+		end				0
+		parm			0.15 0.25
+		flags			linear
+	}
+
+	size
+	{
+		start			15
+		end			15
+		flags			linear
+	}
+
+	shaders
+	[
+
+		fire/muzzleflash_f_a
+	]
+}
+
+Particle
+{
+	name				smoke_front_mist
+
+	flags				useAlpha
+
+	count				1
+
+	life				500 1250
+
+	origin				0 0 0 72 0 0
+
+	rotation			0 360
+
+	rotationDelta		-5
+
+	velocity			0 -30 -30 90 30 30
+
+	gravity				0 100
+
+	rgb
+	{
+		start			0.7412 0.7765 0.749
+		end				0.1961 0.1922 0.2
+		flags			linear
+	}
+
+	alpha
+	{
+		end				0
+		parm			0.15 0.25
+		flags			linear
+	}
+
+	size
+	{
+		start			15
+		end			25
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_none_wht_a
+		smoke/smk_p_none_wht_b
+		smoke/smk_p_none_wht_c
+	]
+}
+
+Particle
+{
+	name				smoke_front_mist_slow
+
+	flags				useAlpha
+
+	count				1
+
+	life				500 1250
+
+	origin				0 0 0 72 0 0
+
+	rotation			0 360
+
+	rotationDelta		-5
+
+	velocity			0 -30 -30 90 30 30
+
+	gravity				0 100
+
+	rgb
+	{
+		start			0.7412 0.7765 0.749
+		end				0.1961 0.1922 0.2
+		flags			linear
+	}
+
+	alpha
+	{
+		end				0
+		parm			0.15 0.25
+		flags			linear
+	}
+
+	size
+	{
+		start			15
+		end			25
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_none_wht_a
+		smoke/smk_p_none_wht_b
+		smoke/smk_p_none_wht_c
+	]
+}
+
+Particle
+{
+	name				smoke_linger
+
+	flags				useAlpha
+
+	spawnFlags			evenDistribution
+
+	count				5 10
+
+	life				1000
+
+	delay				0 1000
+
+	rotation			0 360
+
+	rotationDelta		-5
+
+	velocity			0 -1 -1 2 1 1
+
+	gravity				10 25
+
+	rgb
+	{
+		start			0.7176 0.7451 0.6941
+		end				0.3961 0.3882 0.4039
+		flags			linear
+	}
+
+	alpha
+	{
+		start			0.25 0.75
+		end				0
+		parm			0.15 0.25
+		flags			linear
+	}
+
+	size
+	{
+		start			2
+		end			6
+		flags			linear
+	}
+
+	shaders
+	[
+		smoke/smk_p_fractal_wht_a
+		smoke/smk_p_fractal_wht_b
+		smoke/smk_p_fractal_wht_c
+		smoke/smk_p_none_wht_a
+		smoke/smk_p_none_wht_b
+		smoke/smk_p_none_wht_c
+	]
+}

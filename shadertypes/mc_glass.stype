@@ -1,0 +1,24 @@
+// Chris_P
+//
+// transparent,slightly reflective surface 
+/////////////////////////////
+
+// clear glasses w/slilght reflection
+{
+	surfaceparm	trans
+	q3map_nolightmap
+	q3map_onlyvertexlighting
+
+    {
+        map textures/sfx/environmap_wet.tga
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        alphaGen const 0.1
+        tcGen environment
+    }
+    {
+        map textures/sfx/environmap_wet.tga
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        alphaGen const 0.1
+        tcGen environment
+    }
+}

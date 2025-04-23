@@ -1,0 +1,15 @@
+{
+	surfaceparm metal
+	nomipmaps
+	nopicmip
+	{
+		map skins/chrome.jpg
+		tcgen environment
+		rgbgen lightingdiffuse 
+	}
+
+	{
+		map $texturename
+		blendFunc filter
+	}
+}

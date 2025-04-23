@@ -1,0 +1,12 @@
+{
+	surfaceparm metal
+	{
+		map $texturename
+		rgbGen lightingDiffuse
+//		rgbGen exactVertex
+		tcmod scroll -1 0
+		rgbgen constLighting ( 0.7 0 0.9 )
+		alphaGen const .8
+		blendfunc blend
+	}
+}

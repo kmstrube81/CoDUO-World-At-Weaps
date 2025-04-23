@@ -1,0 +1,39 @@
+//   ____  _                 _ ________   __                   
+//  |  _ \| |               | |  ____\ \ / /                   
+//  | |_) | | ___   ___   __| | |__   \ \ /                    
+//  |  _ <| |/ _ \ / _ \ / _` |  __|   \ \                     
+//  | |_) | | (_) | (_) | (_| | |     / \ \                    
+//  |____/|_|\___/ \___/ \__,_|_|    /_/ \_\
+//  
+//  A Merciless Creation by Chris_P
+//
+//////////////////////////////////////////////////////////
+
+
+//draw the blood splats on the ground
+
+decal
+{	
+	
+	life				120000
+
+	rotation			-360 360
+
+	rgb
+	{
+		start			0.5 0.5 0.5
+	}
+	
+	size
+	{
+		start			 2 3	
+	}
+	
+	shaders
+	[
+		gfx/impact/blood_drop_stain0
+		gfx/impact/blood_drop_stain1
+		gfx/impact/blood_drop_stain2
+		gfx/impact/blood_drop_stain3
+	]
+}

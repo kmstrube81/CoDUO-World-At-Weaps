@@ -1,0 +1,52 @@
+//   ____  _                 _ ________   __                   
+//  |  _ \| |               | |  ____\ \ / /                   
+//  | |_) | | ___   ___   __| | |__   \ \ /                    
+//  |  _ <| |/ _ \ / _ \ / _` |  __|   \ \                     
+//  | |_) | | (_) | (_) | (_| | |     / \ \                    
+//  |____/|_|\___/ \___/ \__,_|_|    /_/ \_\
+//  
+//  A Merciless Creation by Chris_P
+//
+//////////////////////////////////////////////////////////
+
+particle
+{
+	flags				impactFX usePhysics impactKills
+	
+	spawnflags			axisfromSphere orgOnCylinder
+	
+	life				1200
+	
+	count				1 
+	
+	//bounce			0.3
+	
+	velocity			3 3 1 -5 -5 -1
+
+	rgb
+	{
+		start			0.3 0.01 0.01
+		end				.4 .01 .01
+		flags			linear
+	}
+	
+	gravity			-800
+
+	size
+	{
+		start			1 1.5
+		
+	}
+	
+	shaders
+	[
+		gfx/impact/blood_droplett1
+		gfx/impact/blood_drop2
+	]
+	
+	impactFX
+	[
+		fx/impacts/blood_dripfx
+
+	]
+}

@@ -1,0 +1,50 @@
+//   ____  _                 _ ________   __                   
+//  |  _ \| |               | |  ____\ \ / /                   
+//  | |_) | | ___   ___   __| | |__   \ \ /                    
+//  |  _ <| |/ _ \ / _ \ / _` |  __|   \ \                     
+//  | |_) | | (_) | (_) | (_| | |     / \ \                    
+//  |____/|_|\___/ \___/ \__,_|_|    /_/ \_\
+//  
+//  A Merciless Creation by Chris_P
+//
+//////////////////////////////////////////////////////////
+
+OrientedParticle
+{
+	flags				useAlpha 
+
+	life				120000
+
+	rotation			0 360
+	
+	count				1
+	
+	rgb
+	{
+		start			.4 .1 .1
+		end			.4 .1 .1
+
+		flags			nonlinear
+	}
+
+	alpha
+	{
+		end				0
+		parm			40
+		flags			nonlinear
+	}
+
+	size
+	{
+		start			2
+		end				25 35
+		parm			10 25
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/effects/bloodpool1
+		gfx/effects/bloodpool2
+	]
+}

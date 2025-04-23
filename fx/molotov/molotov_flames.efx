@@ -1,0 +1,63 @@
+Particle
+{
+	name				Copy of Unnamed Particle 0
+
+	flags				usePhysics SetShaderTime
+	
+	spawnflags			rgbComponentInterpolation
+	
+	count 				3  5
+	
+	delay				0 12000
+	
+	wind				90 120
+	
+	life				1200 2300
+	
+	angle 			0 360 0 0 -360 0
+	
+	acceleration		0 20 20 0 -20 -20
+	
+	gravity			-600	
+
+	rgb
+	{
+		start			.5 .5 .5
+		flags			linear
+	}
+
+	alpha
+	{
+		start			.7 1
+		end			0
+		parm			0.25 0.5
+		flags			linear
+	}
+
+	size
+	{
+		start			10 25
+		end			45 55
+		flags			linear 
+	}
+
+	size2
+	{
+		start			15 30
+		end			50 65
+		flags			linear
+	}
+
+	shaders
+	[
+		fire/flame_lick_a
+		fire/flame_lick_b
+		fire/flame_lick_c
+		fire/flame_lick_d
+		fire/flame_lick_e
+		fire/flame_lick_f
+	]
+
+}
+
+

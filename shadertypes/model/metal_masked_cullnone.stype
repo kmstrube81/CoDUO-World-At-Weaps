@@ -1,0 +1,14 @@
+// created by BA
+// this is a metal shader with alpha and doublesided goodness
+
+{
+	surfaceparm metal
+	surfaceparm nonsolid
+	cull none
+	{
+		map $texturename
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+		depthWrite
+	}
+}
