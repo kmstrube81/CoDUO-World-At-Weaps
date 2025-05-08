@@ -420,7 +420,7 @@ Callback_StartGameType() // Setup the game.
 		game["menu_quickvehicles"] = "quickvehicles";
 		game["menu_quickrequests"] = "quickrequests";
 //CUSTOM MENU LOAD//////////////////////////////////////////////////////////
-		maps\mp\gametypes\_newmenus::precacheNewMenus();	
+		maps\mp\gametypes\_waw::wawStartGametype();	
 ////////////////////////////////////////////////////////////////////////////
 		precacheString(&"MPSCRIPT_PRESS_ACTIVATE_TO_SKIP");
 		precacheString(&"MPSCRIPT_KILLCAM");
@@ -1025,6 +1025,10 @@ Callback_PlayerConnect()
 			case "viewmap":
 				self openMenu(game["menu_viewmap"]);
 				break;
+				
+			case "callvote":
+				self openMenu(game["menu_callvote"]);
+				break;
 			}
 		}	
 ////////////////////////////////////////////////
@@ -1081,66 +1085,7 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
 	if(level.ceasefire && sMeansOfDeath != "MOD_EXPLOSIVE" && sMeansOfDeath != "MOD_WATER" && sMeansOfDeath != "MOD_TRIGGER_HURT")
 		return;
 		
-	// check for completely getting out of the damage
-//	if(!(iDFlags & level.iDFLAGS_NO_PROTECTION))
-	{
-		if(isPlayer(eAttacker) && (self != eAttacker) && (self.pers["team"] == eAttacker.pers["team"]))
-		{
-			if(level.friendlyfire == "1")
-			{
-				// Make sure at least one point of damage is done
-				if(iDamage < 1)
-					iDamage = 1;
-				maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				self finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-			}
-			else if(level.friendlyfire == "0" )
-			{
-				return;
-			}
-			else if(level.friendlyfire == "2")
-			{
-				eAttacker.friendlydamage = true;
-		
-				iDamage = iDamage * .5;
-
-				// Make sure at least one point of damage is done
-				if(iDamage < 1)
-					iDamage = 1;
-				eAttacker maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				eAttacker finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				eAttacker.friendlydamage = undefined;
-				
-				friendly = true;
-			}
-			else if(level.friendlyfire == "3")
-			{
-				eAttacker.friendlydamage = true;
-
-				iDamage = iDamage * .5;
-
-				// Make sure at least one point of damage is done
-				if(iDamage < 1)
-					iDamage = 1;
-				
-				self maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				self finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				eAttacker maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				eAttacker finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-				eAttacker.friendlydamage = undefined;
-				
-				friendly = true;
-			}
-		}
-		else
-		{
-			// Make sure at least one point of damage is done
-			if(iDamage < 1)
-				iDamage = 1;
-			maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-			self finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
-		}
-	}
+	self maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
 		
 	// Do debug print if it's enabled
 	if(getCvarInt("g_debugDamage"))

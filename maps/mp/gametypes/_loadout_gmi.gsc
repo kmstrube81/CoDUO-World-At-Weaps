@@ -31,6 +31,7 @@ PlayerSpawnLoadout()
 	self setSpawnWeapon(self.pers["weapon"]);
 	
 	self givePistol();
+	self setWeaponSlotWeapon("grenade", self.pers["grenade"]);
 	self giveGrenades(self.pers["weapon"]);
 	self giveSmokeGrenades();
 	self giveSatchelCharges();
@@ -162,7 +163,7 @@ givePistol()
 	else
 		ammount = GetPistolAmmo(pistoltype);
 	
-	self giveWeapon(pistoltype);
+	self setWeaponSlotWeapon("pistol", pistoltype);
 
 	if ( ammount > clip_size )
 	{
@@ -609,28 +610,30 @@ getFullWeaponName(partialName)
 					return "extra_equipment_perk";
 				case "Perk2":
 					return "extra_smoke_perk";
+				case "Perk3":
+					return "marathon_perk";
 				default:
 					return "";
 			}
 		case "cPerk":
 			switch(self.pers["lastresponse"]){
 				case "Perk1":
-					return "";
+					return "bomb_squad_perk";
 				case "Perk2":
 					return "extra_grenade_perk";
 				case "Perk3":
-					return "";
+					return "medic_perk";
 				default:
 					return "";
 			}
 		case "dPerk":
 			switch(self.pers["lastresponse"]){
 				case "Perk1":
-					return "";
+					return "tripwire_perk";
 				case "Perk2":
 					return "extra_ammo_perk";
 				case "Perk3":
-					return "";
+					return "scavenger_perk";
 				default:
 					return "";
 			}
@@ -840,7 +843,7 @@ updateDefaultLoadout(team)
 	
 	if(!isDefined(self.pers["killstreak"])){
 		self setClientCvar("ui_killstreak_selected", "artillery");
-		self.pers["killstreak"] = "artillery";
+		self.pers["killstreak"] = getDefaultKillstreak();
 	}
 			
 	self.pers["loadout_score"] = 0;
@@ -850,6 +853,18 @@ updateDefaultLoadout(team)
 		self.pers["loadout_points"] = level.default_loadout_points;
 	self setClientCvar("player_loadout_points_string", self.pers["loadout_score"] + " of " + self.pers["loadout_points"] + " loadout points used!");
 	self setClientCvar("player_loadout_warning", "");
+}
+
+getDefaultKillstreak()
+{
+	
+	if(!isdefined(level.allow_killstreaks) && !level.allow_killstreaks)
+		return "none";
+	if(isdefined(level.allow_killstreaks) && level.allow_artillery_ks)
+		return "artillery";
+	if(isdefined(level.allow_killstreaks) && level.allow_deployablemg_ks)
+		return "mg";
+	return "none";
 }
 // ----------------------------------------------------------------------------------
 //	getLoadoutSlot
@@ -948,6 +963,8 @@ getLoadoutSlot(weapon)
 		//Perks
 		case "nonePerk1":
 		case "extra_equipment_perk":
+		case "bomb_squad_perk":
+		case "tripwire_perk":
 			return "perk1";
 		case "nonePerk2":
 		case "extra_smoke_perk":
@@ -955,6 +972,9 @@ getLoadoutSlot(weapon)
 		case "extra_ammo_perk":
 			return "perk2";
 		case "nonePerk3":
+		case "marathon_perk":
+		case "medic_perk":
+		case "scavenger_perk":
 			return "perk3";
 		//Killstreaks
 		case "artillery":

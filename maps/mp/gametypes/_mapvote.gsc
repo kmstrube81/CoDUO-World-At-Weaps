@@ -5,9 +5,9 @@
 
 Initialize()
 {
-	PrecacheString(level.mapvotetext["MapVote"]);
-	PrecacheString(level.mapvotetext["TimeLeft"]);
-	PrecacheString(level.mapvotetext["MapVoteHeader"]);
+	PrecacheString(&"Press ^2FIRE^7 to vote                           Votes");
+	PrecacheString(&"Time Left: ");
+	PrecacheString(&"Next Map Vote");
 	
 	//init cvars
 	if(getCvar("sv_map_vote") == "")

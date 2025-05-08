@@ -1,4 +1,3 @@
-
 modeltype()
 {
 	switch(game["allies"])
@@ -975,6 +974,12 @@ getWeaponLoadoutScore(weapon)
 		case "extra_equipment_perk":
 			points = level.cost_extra_equipment;
 			break;
+		case "bomb_squad_perk":
+			points = level.cost_bombsquad;
+			break;
+		case "tripwire_perk":
+			points = level.cost_extra_equipment;
+			break;
 		case "extra_smoke_perk":
 			points = level.cost_extra_smoke;
 			break;
@@ -983,6 +988,15 @@ getWeaponLoadoutScore(weapon)
 			break;
 		case "extra_ammo_perk":
 			points = level.cost_extra_ammo;
+			break;
+		case "marathon_perk":
+			points = level.cost_marathon;
+			break;
+		case "medic_perk":
+			points = level.cost_medic;
+			break;
+		case "scavenger_perk":
+			points = level.cost_scavenger;
 			break;
 	///////////////////////////////////////////////
 	// A weapon not specified in this list is free
@@ -1012,8 +1026,6 @@ restrict(response)
 		case "Perk1":
 		case "Perk2":
 		case "Perk3":
-		case "artillery":
-		case "mg":
 		case "motorcycle":
 		case "firebomb":
 			return response;
@@ -1600,6 +1612,22 @@ restrict(response)
 				response = "restricted";
 			}
 			break;
+			
+		case "bomb_squad_perk":
+			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier1_perks") || !getcvar("scr_allow_bombsquad"))
+			{
+				self iprintln("The bypass tripwire perk is restricted.");
+				response = "restricted";
+			}
+			break;
+			
+		case "tripwire_perk":
+			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier1_perks") || !getcvar("scr_allow_tripwire"))
+			{
+				self iprintln("The tripwire perk is restricted.");
+				response = "restricted";
+			}
+			break;
 		
 		case "extra_smoke_perk":
 			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier2_perks") || !getcvar("scr_allow_extra_smoke"))
@@ -1624,7 +1652,43 @@ restrict(response)
 				response = "restricted";
 			}
 			break;
-		
+		case "marathon_perk":
+			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier3_perks") || !getcvar("scr_allow_marathon"))
+			{
+				self iprintln("The longer sprint perk is restricted.");
+				response = "restricted";
+			}
+			break;
+			
+		case "scavenger_perk":
+			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier3_perks") || !getcvar("scr_allow_scavenger"))
+			{
+				self iprintln("The scavenger perk is restricted.");
+				response = "restricted";
+			}
+			break;
+			
+		case "medic_perk":
+			if(!getcvar("scr_allow_perks") || !getcvar("scr_allow_tier3_perks") || !getcvar("scr_allow_medic"))
+			{
+				self iprintln("The medic perk is restricted.");
+				response = "restricted";
+			}
+			break;
+		case "artillery":
+			if(!getcvar("scr_allow_killstreaks") || !getcvar("scr_allow_artillery_ks"))
+			{
+				self iprintln("The artillery strike killstreak is restricted.");
+				response = "restricted";
+			}
+			break;
+		case "mg":
+			if(!getcvar("scr_allow_killstreaks") || !getcvar("scr_allow_deployablemg_ks"))
+			{
+				self iprintln("The MG42 turret killstreak is restricted.");
+				response = "restricted";
+			}
+			break;
 		default:
 			self iprintln(&"MPSCRIPT_UNKNOWN_WEAPON_SELECTED");
 			response = "restricted";

@@ -143,7 +143,7 @@
 //Thompson
 		itemDef 
 		{
-			name			"button_perk_arty"
+			name			"button_ks_arty"
 			visible			1
 			rect			0 30 160 30
 			origin			ORIGIN_MENUTABS
@@ -182,6 +182,50 @@
 			textalignx		-5
 			textaligny		20
 			cvar			"ui_artillery_kills"
+			decoration
+		}
+		
+		itemDef 
+		{
+			name			"button_ks_mg"
+			visible			1
+			rect			0 60 160 30
+			origin			ORIGIN_MENUTABS
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"2. MG42 Turret"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		10
+			textaligny		20
+			cvartest		"ui_allow_deployablemg_ks"
+			hideCvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "mg";
+				open weapon_loadout;
+				close weapon_killstreak;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		execKey "2" { play "mouse_click"; scriptMenuResponse "mg"; open weapon_loadout; close weapon_killstreak; }
+		itemDef 
+		{
+			name			"button_mg_kills"
+			visible			1
+			rect			0 60 213 30
+			origin			ORIGIN_MENUWINDOW_B
+			forecolor		1 1 1 1
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			textaligny		20
+			cvar			"ui_deployablemg_kills"
 			decoration
 		}
 		

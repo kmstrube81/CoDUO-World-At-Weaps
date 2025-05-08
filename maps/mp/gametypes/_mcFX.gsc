@@ -61,7 +61,7 @@ shockFX(sLOC, sWPN, sDMG , sMOD)
 MonitorMustardGas(eAttacker,vPoint) 
 { 
    //PLAY EFFECT FOR 15 SECONDS 
-   gastime = 14;     
+   gastime = level.mustardgas_linger_time - 1;     
 
    for(j = 0;j <= gastime;j++) 
    { 
@@ -122,7 +122,7 @@ MonitorMustardGas(eAttacker,vPoint)
 ---------------------------------------------------- */ 
 GasPlayer(eAttacker, iDamage, iDFlags , sMeansOfDeath , sWeapon, vPoint , vDir, sHitLoc) 
 { 
-	self endon("TimeToDie");
+	self endon("waw_died");
 	
 	if(!isDefined(self.gassed)) 
 	{
@@ -176,7 +176,7 @@ MonitorCocktail(eAttacker,vPoint)
 { 
 	
    //PLAY EFFECT FOR 12 SECONDS 
-   burntime = 11;     
+   burntime = level.molotov_burn_time - 1;     
   
    for(j = 0;j < burntime ;j++) 
    { 
@@ -228,6 +228,8 @@ MonitorCocktail(eAttacker,vPoint)
 		/*	if(!isDefined(players[i].scr))	
 				players[i] playsound(players[i].painsound); */
 				players[i] maps\mp\gametypes\_waw::printDebug("You should die now. Doing Player Damage callback", "debug", "self");
+				//iDamage should be at least 2 so that we know to apply damage in the callback
+				if(iDamage < 2) iDamage = 2;
 		      	players[i] thread [[level.callbackPlayerDamage]](eAttacker, eAttacker, iDamage, iDFlags , sMeansOfDeath , sWeapon, vPoint , undefined,"none"); 		
    		}
 	 } 

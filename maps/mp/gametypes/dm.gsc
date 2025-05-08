@@ -291,14 +291,13 @@ Callback_StartGameType()
 	game["menu_quickvehicles"] = "quickvehicles";
 	game["menu_quickrequests"] = "quickrequests";
 	
-	//CUSTOM MENU LOAD//////////////////////////////////////////////////////////
-	maps\mp\gametypes\_newmenus::precacheNewMenus();	
+	//CUSTOM MENU LOAD//////////////////////////////////////////////////////////	
+	maps\mp\gametypes\_waw::wawStartGametype();
 	////////////////////////////////////////////////////////////////////////////
 
 	precacheString(&"MPSCRIPT_PRESS_ACTIVATE_TO_RESPAWN");
 	precacheString(&"MPSCRIPT_KILLCAM");
 	precacheString(&"GMI_MP_CEASEFIRE");
-	precacheString(&"you are being gassed");
 
 	precacheMenu(game["menu_serverinfo"]);
 	precacheMenu(game["menu_team"]);
@@ -662,10 +661,6 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
 	if(!isDefined(vDir))
 		iDFlags |= level.iDFLAGS_NO_KNOCKBACK;
 
-	// Make sure at least one point of damage is done
-	if(iDamage < 1)
-		iDamage = 1;
-
 	maps\mp\gametypes\_waw::wawPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
 
 	// Do debug print if it's enabled
@@ -674,9 +669,6 @@ Callback_PlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sW
 		println("client:" + self getEntityNumber() + " health:" + self.health +
 			" damage:" + iDamage + " hitLoc:" + sHitLoc);
 	}
-
-	// Apply the damage to the player
-	self finishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc);
 
 	if(self.sessionstate != "dead")
 	{
@@ -780,16 +772,6 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	if(level.mapended)
 		return;
 		
-//	self updateDeathArray();
-
-	// Make the player drop his weapon
-	self dropItem(self getcurrentweapon());
-
-	// Make the player drop health
-	self dropHealth();
-
-	body = self cloneplayer();
-
 	delay = 2;	// Delay the player becoming a spectator till after he's done dying
 	wait delay;	// ?? Also required for Callback_PlayerKilled to complete before respawn/killcam can execute
 	

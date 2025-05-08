@@ -2010,6 +2010,36 @@
 			showCvar		{ "extra_equipment_perk" }
 			decoration
 		}
+//Bomb Squad
+		itemDef
+		{
+			name			"decoration_perk_bombsquad"
+			visible			1
+			rect			0 283 48 48
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@Perk_DetectExplosives.dds"
+			backcolor		0 0 0 0.74
+			cvarTest		"ui_perk1_selected"
+			showCvar		{ "bomb_squad_perk" }
+			decoration
+		}
+//Tripwire
+		itemDef
+		{
+			name			"decoration_perk_tripwire"
+			visible			1
+			rect			0 283 48 48
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@Perk_Tripwire.dds"
+			backcolor		0 0 0 0.74
+			cvarTest		"ui_perk1_selected"
+			showCvar		{ "tripwire_perk" }
+			decoration
+		}
 //Special Grenades x3
 		itemDef
 		{
@@ -2055,6 +2085,21 @@
 			showCvar		{ "extra_ammo_perk" }
 			decoration
 		}
+//Marathon
+		itemDef
+		{
+			name			"decoration_perk_longer_sprint"
+			visible			1
+			rect			100 283 48 48
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@Perk_Longersprint.dds"
+			backcolor		0 0 0 0.74
+			cvarTest		"ui_perk3_selected"
+			showCvar		{ "marathon_perk" }
+			decoration
+		}
 //Medic
 		itemDef
 		{
@@ -2070,6 +2115,21 @@
 			showCvar		{ "medic_perk" }
 			decoration
 		}
+//Medic
+		itemDef
+		{
+			name			"decoration_perk_scavenger"
+			visible			1
+			rect			100 283 48 48
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@Perk_Scavenger.dds"
+			backcolor		0 0 0 0.74
+			cvarTest		"ui_perk3_selected"
+			showCvar		{ "scavenger_perk" }
+			decoration
+		}
 //KILLSTREAK
 		itemDef
 		{
@@ -2083,6 +2143,20 @@
 			backcolor		0 0 0 0.74
 			cvarTest		"ui_killstreak_selected"
 			showCvar		{ "artillery" }
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_killstreak_mg"
+			visible			1
+			rect			150 283 48 48
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mg42_dep_z.dds"
+			backcolor		0 0 0 0.74
+			cvarTest		"ui_killstreak_selected"
+			showCvar		{ "mg" }
 			decoration
 		}
 // LOADOUT WARNING

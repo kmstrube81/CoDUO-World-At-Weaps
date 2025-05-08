@@ -87,6 +87,29 @@ precachePerkIcons()
     precacheShader("gfx/icons/hud@Perk_Longersprint.dds");
     precacheShader("gfx/icons/hud@Perk_Medic.dds");
     precacheShader("gfx/icons/hud@Perk_Scavenger.dds");
+	
+	//precache perk texts
+	level.scavenger_string = &"^7Hold [{+melee}] to scavenge body...";
+	precacheString(level.scavenger_string);
+	level.tripwire_place_string = &"^7Hold [{+melee}] to place...";
+	precacheString(level.tripwire_place_string);
+	level.tripwire_defuse_string = &"^7Hold [{+melee}] to defuse...";
+	precacheString(level.tripwire_defuse_string);
+	level.tripwire_placing_string = &"^7Placing...";
+	precacheString(level.tripwire_placing_string);
+	level.tripwire_defusing_string = &"^7Picking up...";
+	precacheString(level.tripwire_defusing_string);
+	
+	level.tripwirefx = loadfx("fx/weapon/explosions/grenade_generic.efx");
+	
+	precacheShader("gfx/icons/hud@us_grenade.dds");
+	precacheShader("gfx/icons/hud@british_grenade.dds");
+	precacheShader("gfx/icons/hud@russian_grenade.dds");
+	precacheShader("gfx/icons/hud@steilhandgrenate.dds");
+	precacheShader("gfx/icons/hud@satchel.dds");
+	
+	game["firstaid"] = "gfx/icons/hint_health.tga";
+	precacheShader(game["firstaid"]);
 }
 //--------------------------------------------------------------------------------------
 // precachePerkShaders
@@ -99,4 +122,23 @@ precacheKillstreakIcons()
     precacheShader("gfx/icons/hud@Killstreak_Artillery.dds");
     precacheShader("gfx/icons/hud@killtickempty.tga");
     precacheShader("gfx/icons/hud@killtickfull.tga");
+	
+	level.waw_turretpickupmessage	= &"^7Hold [{+melee}] to pick up...";
+	level.waw_turretplacemessage	= &"^7Hold [{+melee}] to place...";	
+	level.waw_turretpickingmessage	= &"^7Picking up...";
+	level.waw_turretplacingmessage	= &"^7Placing...";
+	
+	precacheString( level.waw_turretpickupmessage );
+	precacheString( level.waw_turretplacemessage );
+	precacheString( level.waw_turretpickingmessage );
+	precacheString( level.waw_turretplacingmessage );
+	
+	precacheModel("xmodel/mg42_bipod");
+	precacheItem("mg42_bipod_stand_mp");
+	precacheItem("mg42_bipod_prone_mp");
+	precacheItem("mg42_bipod_duck_mp");
+	precacheTurret("mg42_bipod_duck_mp");
+	precacheTurret("mg42_bipod_prone_mp");
+	precacheTurret("mg42_bipod_stand_mp");
+	precacheShader("ui_mp/assets/hud@mg42_dep_z.dds");
 }
