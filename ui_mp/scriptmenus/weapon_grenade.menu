@@ -165,6 +165,11 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide mk1britishfrag_info;
+				hide rgd-33russianfrag_info;
+				hide stielhandgranate_info;
+				show weapon_info;
+				show fraggrenade_info;
 			}
 		}
 		execKey "1" { play "mouse_click"; scriptMenuResponse "fraggrenade"; open weapon_loadout; close weapon_grenade; }
@@ -209,6 +214,11 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide rgd-33russianfrag_info;
+				hide stielhandgranate_info;
+				show weapon_info;
+				hide fraggrenade_info;
+				show mk1britishfrag_info;
 			}
 		}
 		execKey "2" { play "mouse_click"; scriptMenuResponse "mk1britishfrag"; open weapon_loadout; close weapon_grenade; }
@@ -252,6 +262,11 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide stielhandgranate_info;
+				show weapon_info;
+				hide fraggrenade_info;
+				hide mk1britishfrag_info;
+				show rgd-33russianfrag_info;
 			}
 		}
 		execKey "3" { play "mouse_click"; scriptMenuResponse "rgd-33russianfrag"; open weapon_loadout; close weapon_grenade; }
@@ -295,6 +310,11 @@
 			onFocus
 			{
 				play "mouse_over";
+				show weapon_info;
+				hide fraggrenade_info;
+				hide mk1britishfrag_info;
+				hide rgd-33russianfrag_info;
+				show stielhandgranate_info;
 			}
 		}
 		execKey "4" { play "mouse_click"; scriptMenuResponse "stielhandgranate"; open weapon_loadout; close weapon_grenade; }
@@ -370,6 +390,377 @@
 			textscale		.24
 			textalignx		10
 			textaligny		20
+			decoration
+		}
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Explosion Radius:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Max Ammo:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_fraggrenade"
+			group           "fraggrenade_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@us_grenade.tga"
+			backcolor       0 0 0 0.74
+			text            "@WEAPON_M2FRAGGRENADE"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "fraggrenade_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A hand-thrown M2 fragmentation grenade with a four-second fuse that unleashes deadly shrapnel in a roughly 29-foot radius, effective for dislodging entrenched infantry and clearing light cover."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "fraggrenade_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "120"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "fraggrenade_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "29.17 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "fraggrenade_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "3"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_mk1britishfrag"
+			group           "mk1britishfrag_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@british_grenade.tga"
+			backcolor       0 0 0 0.74
+			text            "@WEAPON_MK2FRAGGRENADE"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "mk1britishfrag_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A British Mk II fragmentation grenade with a four-second fuse that explodes into deadly fragments within a roughly 29-foot radius, perfect for dislodging entrenched infantry and clearing tight areas."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "mk1britishfrag_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "120"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "mk1britishfrag_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "29.17 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "mk1britishfrag_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "3"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_rgd-33russianfrag"
+			group           "rgd-33russianfrag_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@russian_grenade.tga"
+			backcolor       0 0 0 0.74
+			text            "@WEAPON_RUSSIANGRENADE"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "rgd-33russianfrag_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A Russian RGD-33 fragmentation grenade with a four-second fuse that disperses deadly shrapnel in a roughly 29-foot radius, excellent for neutralizing enemy infantry and clearing confined spaces."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "rgd-33russianfrag_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "120"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "rgd-33russianfrag_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "29.17 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "rgd-33russianfrag_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "3"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_stielhandgranate"
+			group           "stielhandgranate_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@steilhandgrenate.tga"
+			backcolor       0 0 0 0.74
+			text            "@WEAPON_GERMANGRENADE"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "stielhandgranate_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A German stick grenade with a four-second fuse that delivers lethal fragmentation across a roughly 29-foot radius. Its handle boosts throwing leverage, making it ideal for clearing trenches and fortified enemy positions."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "stielhandgranate_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "120"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "stielhandgranate_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "29.17 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "stielhandgranate_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "3"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
 			decoration
 		}
 	}

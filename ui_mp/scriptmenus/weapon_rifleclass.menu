@@ -166,9 +166,28 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m1garand_info;
+				hide svt40_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide gewehr43_info;
+				show weapon_info;
+				show m1carbine_info;
 			}
 		}
-		execKey "1" { play "mouse_click"; scriptMenuResponse "m1carbine"; hide button_attachment_; show button_attachment_m1carbine; }
+		execKey "1" {
+						play "mouse_click";
+						scriptMenuResponse "m1carbine";
+						hide button_attachment_;
+						show button_attachment_m1carbine;
+						hide m1garand_info;
+						hide svt40_info;
+						hide m2carbine_info;
+						hide m3carbine_info;
+						hide gewehr43_info;
+						show weapon_info;
+						show m1carbine_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_m1carbine"
@@ -210,9 +229,28 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				show m1garand_info;
+				show weapon_info;
 			}
 		}
-		execKey "2" { play "mouse_click"; scriptMenuResponse "m1garand"; hide button_attachment_; show button_attachment_m1garand; }
+		execKey "2" {
+						play "mouse_click";
+						scriptMenuResponse "m1garand";
+						hide button_attachment_;
+						show button_attachment_m1garand;
+						hide gewehr43_info;
+						hide svt40_info;
+						hide m1carbine_info;
+						hide m2carbine_info;
+						hide m3carbine_info;
+						show m1garand_info;
+						show weapon_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_m1garand"
@@ -253,9 +291,28 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m1garand_info;
+				hide gewehr43_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				show svt40_info;
+				show weapon_info;
 			}
 		}
-		execKey "3" { play "mouse_click"; scriptMenuResponse "svt40"; hide button_attachment_; show button_attachment_svt40; }
+		execKey "3" {
+						play "mouse_click";
+						scriptMenuResponse "svt40";
+						hide button_attachment_;
+						show button_attachment_svt40;
+						hide m1garand_info;
+						hide gewehr43_info;
+						hide m1carbine_info;
+						hide m2carbine_info;
+						hide m3carbine_info;
+						show svt40_info;
+						show weapon_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_svt40"
@@ -296,10 +353,29 @@
 			}
 			onFocus
 			{
+				hide m1garand_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
 				play "mouse_over";
+				show gewehr43_info;
+				show weapon_info;
 			}
 		}
-		execKey "4" { play "mouse_click"; scriptMenuResponse "gewehr43"; hide button_attachment_; show button_attachment_gewehr43; }
+		execKey "4" { 
+						play "mouse_click";
+						scriptMenuResponse "gewehr43";
+						hide button_attachment_;
+						show button_attachment_gewehr43;
+						hide m1garand_info;
+						hide svt40_info;
+						hide m1carbine_info;
+						hide m2carbine_info;
+						hide m3carbine_info;
+						show gewehr43_info;
+						show weapon_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_gewehr43"
@@ -346,7 +422,14 @@
 			}
 			onFocus
 			{
+				hide m1garand_info;
+				hide svt40_info;
+				hide gewehr43_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
 				play "mouse_over";
+				show m1carbine_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -392,7 +475,14 @@
 			}
 			onFocus
 			{
+				hide m1garand_info;
+				hide svt40_info;
+				hide gewehr43_info;
+				hide m1carbine_info;
+				hide m3carbine_info;
 				play "mouse_over";
+				show m2carbine_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -438,7 +528,14 @@
 			}
 			onFocus
 			{
+				hide m1garand_info;
+				hide svt40_info;
+				hide gewehr43_info;
+				hide m2carbine_info;
+				hide m1carbine_info;
 				play "mouse_over";
+				show m3carbine_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -486,6 +583,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				show m1garand_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -532,6 +636,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				show m1garand_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -578,6 +689,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide svt40_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				show m1garand_info;
+				show weapon_info;
 			}
 		}
 		itemDef 
@@ -625,6 +743,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide m1garand_info;
+				show weapon_info;
+				show svt40_info;
 			}
 		}
 		itemDef 
@@ -671,6 +796,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide gewehr43_info;
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide m1garand_info;
+				show weapon_info;
+				show svt40_info;
 			}
 		}
 		itemDef 
@@ -718,6 +850,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide m1garand_info;
+				show weapon_info;
+				hide svt40_info;
+				show gewehr43_info;
 			}
 		}
 		itemDef 
@@ -764,6 +903,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide m1garand_info;
+				show weapon_info;
+				hide svt40_info;
+				show gewehr43_info;
 			}
 		}
 		itemDef 
@@ -810,6 +956,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m1carbine_info;
+				hide m2carbine_info;
+				hide m3carbine_info;
+				hide m1garand_info;
+				show weapon_info;
+				hide svt40_info;
+				show gewehr43_info;
 			}
 		}
 		itemDef 
@@ -863,5 +1016,533 @@
 			textaligny		20
 			decoration
 		}
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Fire Rate:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Clip Size:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_m1carbine"
+			group			"m1carbine_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@m1carbine.tga"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_M1A1CARBINE"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"m1carbine_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M1 Carbine is a lightweight, semi-automatic carbine firing .30 Carbine rounds. Praised for its portability and controllable recoil, it delivers moderate damage and rapid follow-up shots, ideal for support troops."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name			"weapon_info_damage"
+			group			"m1carbine_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_firerate"
+			group			"m1carbine_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"444 RPM (Semi Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_clipsize"
+			group			"m1carbine_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"15 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_m1garand"
+			group			"m1garand_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@m1garand.tga"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_M1GARAND"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"m1garand_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M1 Garand is a semi-automatic rifle chambered in .30-06 Springfield, known for its high stopping power and accuracy. Its 8-round en bloc clip provides solid firepower with manageable recoil, making it a versatile infantry weapon."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+	// WEAPON PROPERTIES
+		itemDef 
+		{
+			name			"weapon_info_damage"
+			group			"m1garand_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"70"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_firerate"
+			group			"m1garand_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"444 RPM (Semi Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_clipsize"
+			group			"m1garand_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"8 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_svt40"
+			group			"svt40_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@svt40.dds"
+			backcolor		0 0 0 0.74
+			text			"@GMI_WEAPON_SVT40"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"svt40_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The SVT-40 is a Soviet semi-automatic rifle firing 7.62x54mm rounds. Its 10-round en bloc clip provides strong firepower and accuracy, but its hefty weight and substantial recoil demand experienced handling."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+	// WEAPON PROPERTIES
+		itemDef 
+		{
+			name			"weapon_info_damage"
+			group			"svt40_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"66"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_firerate"
+			group			"svt40_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"444 RPM (Semi Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_clipsize"
+			group			"svt40_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"10 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_gewehr43"
+			group			"gewehr43_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@gewehr43.dds"
+			backcolor		0 0 0 0.74
+			text			"@GMI_WEAPON_GEWEHR43"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"gewehr43_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The Gewehr 43 is a German semi-automatic rifle chambered in 7.92x57mm Mauser, featuring a 10-round magazine. It offers moderate rate of fire and solid accuracy, bridging the gap between bolt-actions and fully automatic battle rifles."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+	// WEAPON PROPERTIES
+		itemDef 
+		{
+			name			"weapon_info_damage"
+			group			"gewehr43_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"66"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_firerate"
+			group			"gewehr43_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"444 RPM (Semi Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_clipsize"
+			group			"gewehr43_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"10 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_m2carbine"
+			group			"m2carbine_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m2carbine.dds"
+			backcolor		0 0 0 0.74
+			text			"M2 Carbine"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"m2carbine_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M2 Carbine is a lightweight select-fire carbine firing .30 Carbine rounds with a high cyclic rate. Its 30-round magazine offers sustained fire, making it effective at close to mid-range engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+	// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"m2carbine_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"m2carbine_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"822 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"m2carbine_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"30 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_m3carbine"
+			group			"m3carbine_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@m3.tga"
+			backcolor		0 0 0 0.74
+			text			"M3 Carbine"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"m3carbine_info"
+			visible			0
+			rect			5 130 200 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M3 Carbine is a semi-automatic M1 Carbine variant firing .30 Carbine rounds from a 15-round magazine, equipped with a scope for accuracy. Light, portable with manageable recoil, it's ideal for close to mid-range engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name			"weapon_info_damage"
+			group			"m3carbine_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_firerate"
+			group			"m3carbine_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"414 RPM (Semi Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef 
+		{
+			name			"weapon_info_clipsize"
+			group			"m3carbine_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"15 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+
 	}
 }

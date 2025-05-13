@@ -165,6 +165,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide german_smoke_info;
+				hide bazooka_equip_info;
+				hide panzerschreck_equip_info;
+				hide flamethrower_equip_info;
+				show weapon_info;
+				show satchelcharge_info;
 			}
 		}
 		execKey "1" { play "mouse_click"; scriptMenuResponse "satchelcharge"; open weapon_loadout; close weapon_satchel; }
@@ -209,6 +215,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide bazooka_equip_info;
+				hide panzerschreck_equip_info;
+				hide flamethrower_equip_info;
+				show weapon_info;
+				hide satchelcharge_info;
+				show german_smoke_info;
 			}
 		}
 		execKey "2" { play "mouse_click"; scriptMenuResponse "german_smoke"; open weapon_loadout; close weapon_satchel; }
@@ -253,6 +265,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide flamethrower_equip_info;
+				show weapon_info;
+				hide satchelcharge_info;
+				hide german_smoke_info;
+				hide bazooka_equip_info;
+				show panzerschreck_equip_info;
 			}
 		}
 		execKey "3" { play "mouse_click"; scriptMenuResponse "panzerschreck_equip"; open weapon_loadout; close weapon_satchel; }
@@ -297,6 +315,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide flamethrower_equip_info;
+				show weapon_info;
+				hide satchelcharge_info;
+				hide german_smoke_info;
+				hide panzerschreck_equip_info;
+				show bazooka_equip_info;
 			}
 		}
 		execKey "4" { play "mouse_click"; scriptMenuResponse "bazooka_equip"; open weapon_loadout; close weapon_satchel; }
@@ -341,6 +365,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide weapon_info;
+				hide satchelcharge_info;
+				hide german_smoke_info;
+				hide panzerschreck_equip_info;
+				hide bazooka_equip_info;
+				show flamethrower_equip_info;
 			}
 		}
 		execKey "5" { play "mouse_click"; scriptMenuResponse "flamethrower_equip"; open weapon_loadout; close weapon_satchel; }
@@ -417,6 +447,423 @@
 			textscale		.24
 			textalignx		10
 			textaligny		20
+			decoration
+		}
+		//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Explosion Radius:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Max Ammo:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_satchelcharge"
+			group           "satchelcharge_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@satchel.dds"
+			backcolor       0 0 0 0.74
+			text            "@GMI_WEAPON_SATCHEL"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "satchelcharge_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A remote-detonated satchel charge with a six-second fuse, delivering massive 500-point explosive damage in a 37.50-foot radius. Ideal for demolishing fortifications, vehicles, and tight enemy positions with one powerful blast."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEWEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "satchelcharge_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "500"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "satchelcharge_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "37.50 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "satchelcharge_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "2"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_german_smoke"
+			group           "german_smoke_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@geballte_ladung.dds"
+			backcolor       0 0 0 0.74
+			text            "Geballte Lathing"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "german_smoke_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A German concentrated explosive charge with a four-second fuse that unleashes a powerful 500-point blast within a 29-foot radius, designed for demolishing fortifications and clearing enemy strongholds with high explosive force."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "german_smoke_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "500"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "german_smoke_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "29.17 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "german_smoke_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "2"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_bazooka_equip"
+			group           "bazooka_equip_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@bazooka.dds"
+			backcolor       0 0 0 0.74
+			text            "@GMI_WEAPON_BAZOOKA"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "bazooka_equip_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A portable American Bazooka rocket launcher that fires high-velocity rockets dealing 100 explosive damage in a 21.33-foot radius. It excels at destroying vehicles and fortified positions."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "bazooka_equip_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "100"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "bazooka_equip_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "21.33 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "bazooka_equip_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "4"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_panzerschreck_equip"
+			group           "panzerschreck_equip_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@panzerschreck.dds"
+			backcolor       0 0 0 0.74
+			text            "@GMI_WEAPON_PANZERSCHRECK"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "panzerschreck_equip_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A German Panzerschreck rocket launcher that fires high-explosive rockets inflicting 100 damage within a 21.33-foot radius. It’s designed to penetrate heavy armor and demolish fortified targets."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef 
+		{
+			name            "weapon_info_damage"
+			group           "panzerschreck_equip_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "100"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_radius"
+			group           "panzerschreck_equip_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "21.33 Feet"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef 
+		{
+			name            "weapon_info_ammo"
+			group           "panzerschreck_equip_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "4"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}	
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"flamethrower_equip_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name            "decoration_primary_flamethrower_equip"
+			group           "flamethrower_equip_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "gfx/icons/hud@flame_pickup.dds"
+			backcolor       0 0 0 0.74
+			text            "@GMI_WEAPON_FLAMETHROWER"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "flamethrower_equip_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "A German portable flamethrower that projects a continuous stream of incendiary fuel. With up to 500 fuel units, it excels at clearing trenches and fortifications."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
 			decoration
 		}
 	}

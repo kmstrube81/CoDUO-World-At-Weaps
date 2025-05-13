@@ -165,6 +165,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide dp28_info;
+				hide mg34_info;
+				hide mg42_info;
+				hide trenchgun_info;
+				show weapon_info;
+				show mg30Cal_info;
 			}
 		}
 		execKey "1" { play "mouse_click"; scriptMenuResponse "mg30cal"; open weapon_loadout; close weapon_heavyclass; }
@@ -209,6 +215,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide mg34_info;
+				hide mg42_info;
+				hide trenchgun_info;
+				show weapon_info;
+				hide mg30Cal_info;
+				show dp28_info;
 			}
 		}
 		execKey "2" { play "mouse_click"; scriptMenuResponse "dp28"; open weapon_loadout; close weapon_heavyclass; }
@@ -251,6 +263,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide mg42_info;
+				hide trenchgun_info;
+				show weapon_info;
+				hide mg30Cal_info;
+				hide dp28_info;
+				show mg34_info;
 			}
 		}
 		execKey "3" { play "mouse_click"; scriptMenuResponse "mg34"; open weapon_loadout; close weapon_heavyclass; }
@@ -293,6 +311,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide trenchgun_info;
+				show weapon_info;
+				hide mg30Cal_info;
+				hide dp28_info;
+				hide mg34_info;
+				show mg42_info;
 			}
 		}
 		execKey "4" { play "mouse_click"; scriptMenuResponse "mg42"; open weapon_loadout; close weapon_heavyclass; }
@@ -335,6 +359,12 @@
 			onFocus
 			{
 				play "mouse_over";
+				show weapon_info;
+				hide mg30Cal_info;
+				hide dp28_info;
+				hide mg34_info;
+				hide mg42_info;
+				show trenchgun_info;
 			}
 		}
 		execKey "5" { play "mouse_click"; scriptMenuResponse "trenchgun"; open weapon_loadout; close weapon_heavyclass; }
@@ -385,5 +415,454 @@
 			textaligny		20
 			decoration
 		}
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Fire Rate:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Clip Size:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef  
+		{  
+			name            "decoration_primary_mg30Cal"  
+			group           "mg30Cal_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "ui_mp/assets/hud@30cal_z.dds"  
+			backcolor       0 0 0 0.74  
+			text            "@WEAPON_30CAL"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "mg30Cal_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The M1919A6 Browning .30 Cal is an American LMG firing a 75-round belt at 545 RPM. Its powerful rounds and sustained suppressive fire excel at medium range, but heavy recoil and slow mobility require careful burst control."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEWEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "mg30Cal_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "70"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "mg30Cal_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "545 RPM (Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "mg30Cal_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "75 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_dp28"  
+			group           "dp28_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "ui_mp/assets/hud@dp28.dds"  
+			backcolor       0 0 0 0.74  
+			text            "DP-28"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "dp28_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The DP-28 is a Soviet belt-fed light machine gun with moderate recoil and a 47-round pan magazine. It delivers 70 damage per shot and 571 RPM sustained fire, excelling at suppressive fire but limited by heavy weight and slow reloads."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "dp28_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "70"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "dp28_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "571 RPM (Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "dp28_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "47 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_mg34"  
+			group           "mg34_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "ui_mp/assets/hud@mg34.dds"  
+			backcolor       0 0 0 0.74  
+			text            "@GMI_WEAPON_MG34"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "mg34_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The MG34 is a German general-purpose machine gun firing 50-round belts at 800 RPM. It excels at sustained suppressive fire and medium-range engagements, though its weight and recoil demand controlled bursts for accuracy."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "mg34_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "70"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "mg34_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "800 RPM (Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "mg34_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "50 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_mg42"  
+			group           "mg42_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "ui_mp/assets/hud@mg42_z.dds"  
+			backcolor       0 0 0 0.74  
+			text            "MG42"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "mg42_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The MG42 is an iconic German general-purpose machine gun with a blistering rate of fire. It delivers 70 damage per shot at 1,500 RPM from a 50-round belt, excelling at suppressive fire but requiring disciplined bursts to manage recoil."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef  
+		{  
+			name            "weapon_info_damage"  
+			group           "mg42_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "70"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_firerate"  
+			group           "mg42_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "1500 RPM (Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_clipsize"  
+			group           "mg42_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "50 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_trenchgun"  
+			group           "trenchgun_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "ui_mp/assets/hud@trenchgun.dds"  
+			backcolor       0 0 0 0.74  
+			text            "M1897 Trenchgun"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "trenchgun_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "M1897 Trenchgun is a pump-action shotgun firing high-damage buckshot at close range. It excels in tight spaces with devastating stopping power and wide pellet spread but suffers from a slow pump cycle and limited ammo capacity."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef  
+		{  
+			name            "weapon_info_damage"  
+			group           "trenchgun_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "75"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_firerate"  
+			group           "trenchgun_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "36 RPM (Pump Action)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_clipsize"  
+			group           "trenchgun_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "1 Shell"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
 	}
 }

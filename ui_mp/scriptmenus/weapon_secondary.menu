@@ -165,6 +165,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide webley_info;
+				hide tt33_info;
+				hide luger_info;
+				hide welrod_info;
+				hide m712_info;
+				show weapon_info;
+				show colt_info;
 			}
 		}
 		execKey "1" { play "mouse_click"; scriptMenuResponse "colt"; open weapon_loadout; close weapon_secondary; }
@@ -209,6 +216,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tt33_info;
+				hide luger_info;
+				hide welrod_info;
+				hide m712_info;
+				show weapon_info;
+				hide colt_info;
+				show webley_info;
 			}
 		}
 		execKey "2" { play "mouse_click"; scriptMenuResponse "webley"; open weapon_loadout; close weapon_secondary; }
@@ -252,6 +266,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide luger_info;
+				hide welrod_info;
+				hide m712_info;
+				show weapon_info;
+				hide colt_info;
+				hide webley_info;
+				show tt33_info;
 			}
 		}
 		execKey "3" { play "mouse_click"; scriptMenuResponse "russianpistol"; open weapon_loadout; close weapon_secondary; }
@@ -295,6 +316,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide welrod_info;
+				hide m712_info;
+				show weapon_info;
+				hide colt_info;
+				hide webley_info;
+				hide tt33_info;
+				show luger_info;
 			}
 		}
 		execKey "4" { play "mouse_click"; scriptMenuResponse "luger"; open weapon_loadout; close weapon_secondary; }
@@ -339,6 +367,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide m712_info;
+				show weapon_info;
+				hide colt_info;
+				hide webley_info;
+				hide tt33_info;
+				hide luger_info;
+				show welrod_info;
 			}
 		}
 		execKey "5" { play "mouse_click"; scriptMenuResponse "silencedpistol"; open weapon_loadout; close weapon_secondary; }
@@ -383,6 +418,13 @@
 			onFocus
 			{
 				play "mouse_over";
+				show weapon_info;
+				hide colt_info;
+				hide webley_info;
+				hide tt33_info;
+				hide luger_info;
+				hide welrod_info;
+				show m712_info;
 			}
 		}
 		execKey "6" { play "mouse_click"; scriptMenuResponse "m712"; open weapon_loadout; close weapon_secondary; }
@@ -460,5 +502,533 @@
 			textaligny		20
 			decoration
 		}
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Fire Rate:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Clip Size:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef  
+		{  
+			name            "decoration_primary_colt"  
+			group           "colt_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "gfx/icons/hud@colt_45.dds"  
+			backcolor       0 0 0 0.74  
+			text            "@WEAPON_COLT45"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "colt_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The Colt .45 is a semi-automatic pistol firing 50-damage rounds at 444 RPM. Its 7-round magazine offers quick follow-up shots but demands accurate aim and careful trigger discipline due to limited capacity."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "colt_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "50"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "colt_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "444 RPM (Semi Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "colt_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "7 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_webley"  
+			group           "webley_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "gfx/icons/hud@webly.dds"  
+			backcolor       0 0 0 0.74  
+			text            "@GMI_WEAPON_WEBLEY"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "webley_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The Webley revolver is a British sidearm delivering 75 damage per shot with a six-round cylinder. It's semi-auto capable, offering moderate rate of fire and reliable performance in close to medium range, though its limited capacity demands careful aim."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "webley_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "75"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "webley_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "444 RPM (Semi Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "webley_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "6 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_tt33"  
+			group           "tt33_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "gfx/icons/hud@tt33.dds"  
+			backcolor       0 0 0 0.74  
+			text            "@GMI_WEAPON_TT33"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "tt33_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The TT-33 is a Soviet semi-automatic pistol firing 50 damage rounds at 444 RPM. Its 7-round magazine delivers reliable quick shots at close range, but limited capacity demands precision and careful reloads."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "tt33_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "50"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "tt33_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "444 RPM (Semi Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "tt33_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "7 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "decoration_primary_luger"  
+			group           "luger_info"  
+			visible         0  
+			rect            5 3 205 109  
+			origin          ORIGIN_MENUWINDOW_C  
+			style           WINDOW_STYLE_SHADER  
+			forecolor       1 1 1 1  
+			background      "gfx/icons/hud@luger.tga"  
+			backcolor       0 0 0 0.74  
+			text            "@WEAPON_LUGER"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .16  
+			textalign       ITEM_ALIGN_LEFT  
+			textalignx      5  
+			textaligny      109  
+			decoration  
+		}  
+		itemDef  
+		{  
+			name            "weapon_info_text"  
+			group           "luger_info"  
+			visible         0  
+			rect            5 130 205 200  
+			origin          ORIGIN_MENUWINDOW_C  
+			autowrapped  
+			text            "The Luger P08 is a semi-automatic pistol firing 45 damage rounds at 444 RPM. Its 8-round magazine and rapid fire rate enable quick follow-up shots but demand precise aim and trigger control due to limited capacity."  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			decoration  
+		}  
+// WEAPON PROPERTIES  
+		itemDef   
+		{  
+			name            "weapon_info_damage"  
+			group           "luger_info"  
+			visible         0  
+			rect            214 235 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "45"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_firerate"  
+			group           "luger_info"  
+			visible         0  
+			rect            214 259 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "444 RPM (Semi Auto)"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef   
+		{  
+			name            "weapon_info_clipsize"  
+			group           "luger_info"  
+			visible         0  
+			rect            214 283 214 24  
+			origin          ORIGIN_MENUWINDOW_C  
+			forecolor       1 1 1 1  
+			text            "8 Rounds"  
+			textfont        UI_FONT_NORMAL  
+			textscale       .24  
+			textalign       ITEM_ALIGN_RIGHT  
+			textalignx      -5  
+			decoration  
+		}  
+		itemDef
+		{
+			name            "decoration_primary_silencedpistol"
+			group           "welrod_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "ui_mp/assets/hud@welrod.dds"
+			backcolor       0 0 0 0.74
+			text            "Welrod Silenced Pistol"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "welrod_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "The Welrod Silenced Pistol is a bolt-action sidearm firing subsonic 70-damage rounds with minimal sound. Its 6-round magazine rewards stealthy, patient engagements, delivering precise silent takedowns at close range while requiring manual cycling between shots."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+// WEAPON PROPERTIES
+		itemDef
+		{
+			name            "weapon_info_damage"
+			group           "welrod_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "70"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_firerate"
+			group           "welrod_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "182 RPM (Bolt Action)"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_clipsize"
+			group           "welrod_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "6 Rounds"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}        
+		itemDef
+		{
+			name            "decoration_primary_m712"
+			group           "m712_info"
+			visible         0
+			rect            5 3 205 109
+			origin          ORIGIN_MENUWINDOW_C
+			style           WINDOW_STYLE_SHADER
+			forecolor       1 1 1 1
+			background      "ui_mp/assets/hud@mauser.dds"
+			backcolor       0 0 0 0.74
+			text            "@Mauser M712"
+			textfont        UI_FONT_NORMAL
+			textscale       .16
+			textalign       ITEM_ALIGN_LEFT
+			textalignx      5
+			textaligny      109
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_text"
+			group           "m712_info"
+			visible         0
+			rect            5 130 205 200
+			origin          ORIGIN_MENUWINDOW_C
+			autowrapped
+			text            "The Mauser M712 is a full-auto variant of the iconic C96 pistol, dealing 50 damage per shot at 857 RPM. Its 10-round magazine and blistering rate of fire offer close-quarters dominance, but heavy recoil demands disciplined bursts."
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			decoration
+		}
+// WEAPON PROPERTIES
+		itemDef
+		{
+			name            "weapon_info_damage"
+			group           "m712_info"
+			visible         0
+			rect            214 235 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "50"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_firerate"
+			group           "m712_info"
+			visible         0
+			rect            214 259 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "857 RPM (Auto)"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+		itemDef
+		{
+			name            "weapon_info_clipsize"
+			group           "m712_info"
+			visible         0
+			rect            214 283 214 24
+			origin          ORIGIN_MENUWINDOW_C
+			forecolor       1 1 1 1
+			text            "10 Rounds"
+			textfont        UI_FONT_NORMAL
+			textscale       .24
+			textalign       ITEM_ALIGN_RIGHT
+			textalignx      -5
+			decoration
+		}
+
 	}
 }

@@ -168,9 +168,36 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				show thompson_info;
 			}
 		}
-		execKey "1" { play "mouse_click"; scriptMenuResponse "thompson"; hide button_attachment_; show button_attachment_thompson; }
+		execKey "1" {
+						play "mouse_click";
+						scriptMenuResponse "thompson";
+						hide button_attachment_;
+						show button_attachment_thompson;
+						hide tommy_info;
+						hide tommy2_info;
+						hide sten_info;
+						hide sten_silenced_info;
+						hide ppsh_info;
+						hide mp40_info;
+						hide mp40_silenced_info;
+						hide greasegun_info;
+						hide pps43_info;
+						show weapon_info;
+						show thompson_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_thompson"
@@ -212,9 +239,36 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				show sten_info;
 			}
 		}
-		execKey "2" { play "mouse_click"; scriptMenuResponse "sten"; hide button_attachment_; show button_attachment_sten;}
+		execKey "2" { 
+						play "mouse_click";
+						scriptMenuResponse "sten";
+						hide button_attachment_;
+						show button_attachment_sten;
+						hide tommy_info;
+						hide tommy2_info;
+						hide sten_silenced_info;
+						hide ppsh_info;
+						hide mp40_info;
+						hide mp40_silenced_info;
+						hide greasegun_info;
+						hide pps43_info;
+						show weapon_info;
+						hide thompson_info;
+						show sten_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_sten"
@@ -257,6 +311,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				show ppsh_info;
 			}
 		}
 		execKey "3" { play "mouse_click"; scriptMenuResponse "ppsh"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }
@@ -300,9 +365,36 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide ppsh_info;
+				show mp40_info;
 			}
 		}
-		execKey "4" { play "mouse_click"; scriptMenuResponse "mp40"; hide button_attachment_; show button_attachment_mp40; }
+		execKey "4" {
+						play "mouse_click";
+						scriptMenuResponse "mp40";
+						hide button_attachment_;
+						show button_attachment_mp40;
+						hide tommy_info;
+						hide tommy2_info;
+						hide sten_info;
+						hide sten_silenced_info;
+						hide mp40_silenced_info;
+						hide greasegun_info;
+						hide pps43_info;
+						show weapon_info;
+						hide thompson_info;
+						hide ppsh_info;
+						show mp40_info;
+					}
 		itemDef 
 		{
 			name			"button_weapon_mp40"
@@ -345,6 +437,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide mp40_silenced_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide ppsh_info;
+				hide mp40_info;
+				show greasegun_info;
 			}
 		}
 		execKey "5" { play "mouse_click"; scriptMenuResponse "greasegun"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }		
@@ -390,6 +493,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide mp40_silenced_info;
+				show weapon_info;
+				hide thompson_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide greasegun_info;
+				show pps43_info;
 			}
 		}
 		execKey "6" { play "mouse_click"; scriptMenuResponse "pps43"; open weapon_loadout; hide button_attachment_; close weapon_lightclass; }
@@ -440,6 +554,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				show thompson_info;
 			}
 		}
 		itemDef 
@@ -486,6 +611,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				show tommy_info;
 			}
 		}
 		itemDef 
@@ -532,6 +668,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide sten_info;
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide tommy_info;
+				show tommy2_info;
 			}
 		}
 		itemDef 
@@ -579,6 +726,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide sten_silenced_info;
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide tommy_info;
+				hide tommy2_info;
+				show sten_info;
 			}
 		}
 		itemDef 
@@ -624,6 +782,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide ppsh_info;
+				hide mp40_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				show sten_silenced_info;
 			}
 		}
 		itemDef 
@@ -671,6 +840,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide ppsh_info;
+				hide mp40_silenced_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				show mp40_info;
 			}
 		}
 		itemDef 
@@ -716,6 +896,17 @@
 			onFocus
 			{
 				play "mouse_over";
+				hide ppsh_info;
+				hide greasegun_info;
+				hide pps43_info;
+				show weapon_info;
+				hide thompson_info;
+				hide tommy_info;
+				hide tommy2_info;
+				hide sten_info;
+				hide sten_silenced_info;
+				hide mp40_info;
+				show mp40_silenced_info;
 			}
 		}
 		itemDef 
@@ -767,6 +958,845 @@
 			textscale		.24
 			textalignx		10
 			textaligny		20
+			decoration
+		}
+//WEAPON INFO
+		itemDef
+		{
+			name			"box_info_icon"
+			group			"weapon_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0.74
+			border			5
+			bordercolor		0.9 0.9 0.9 1
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 235 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Damage:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 259 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Fire Rate:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_propertiestext"
+			group			"weapon_info"
+			visible 		0
+			rect			0 283 210 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			autowrapped
+			text			"Clip Size:"
+			textfont		UI_FONT_NORMAL
+			textalignx		5
+			textscale		.24
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_thompson"
+			group			"thompson_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@thompson_fullauto.dds"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_THOMPSON"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"thompson_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The Thompson is an iconic American submachine gun firing .45 ACP rounds in full-auto mode from a 30-round magazine. Its robust build delivers high firepower with moderate recoil, ideal for close-range combat."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"thompson_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"thompson_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"700 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"thompson_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"30 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_tommy"
+			group			"tommy_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@thompson_M1928.dds"
+			backcolor		0 0 0 0.74
+			text			"M1928 Thompson"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"tommy_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The Thompson Model 1928 is a classic submachine gun firing .45 ACP rounds in full-auto from a 50-round drum magazine. Its sturdy construction and high firepower with moderate recoil make it perfect for close-quarters suppression."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"tommy_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"tommy_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"685 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"tommy_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_tommy2"
+			group			"tommy2_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@thompson_M1928_silenced.dds"
+			backcolor		0 0 0 0.74
+			text			"M1928 Thompson w/Silencer"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"tommy2_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M1928 Thompson is a classic .45 ACP submachine gun firing full-auto from a 20-round magazine and fitted with a silencer for stealth. Its durable build and manageable recoil excel in quiet close-quarters combat."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"tommy2_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"tommy2_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"685 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"tommy2_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"20 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_sten"
+			group			"sten_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@sten.tga"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_STEN"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"sten_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The Sten Mk II is a British 9x19mm submachine gun firing full-auto from a 32-round magazine. Simple, lightweight, and reliable, its moderate rate of fire and high capacity make it ideal for close-quarters engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"sten_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"48"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"sten_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"600 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"sten_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"32 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_sten_silenced"
+			group			"sten_silenced_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@sten_silent.dds"
+			backcolor		0 0 0 0.74
+			text			"@GMI_WEAPON_SILENCED_STEN"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"sten_silenced_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The Sten Mk II Silenced is a British 9x19mm submachine gun fitted with a suppressor, firing from a 32-round magazine. Quiet and lightweight, its moderate rate of fire and reliability excel in stealthy close-quarters engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"sten_silenced_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"48"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"sten_silenced_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"600 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"sten_silenced_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"32 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_ppsh"
+			group			"ppsh_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@ppsh_fullauto.dds"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_PPSH"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"ppsh_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The PPSh-41 is a Soviet submachine gun firing 7.62x25mm rounds at a blistering rate of fire, fed from a 71-round drum magazine. Rugged and reliable, its high capacity and rapid fire excel in close-quarters combat."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEWEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"ppsh_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"38"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"ppsh_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"896 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"ppsh_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"71 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_mp40"
+			group			"mp40_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@mp40.tga"
+			backcolor		0 0 0 0.74
+			text			"@WEAPON_MP40"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"mp40_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The MP40 is a German 9x19mm submachine gun firing from a 32-round magazine at a steady rate, prized for its simplicity and controllable recoil, excelling in close-quarters engagements with reliable performance."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"mp40_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"48"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"mp40_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"500 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"mp40_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"32 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_mp40_silenced"
+			group			"mp40_silenced_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@mp40_silenced.dds"
+			backcolor		0 0 0 0.74
+			text			"MP40 w/Silencer"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"mp40_silenced_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The MP40 Silenced is a German 9x19mm submachine gun fitted with a suppressor, firing from a 32-round magazine at 500 RPM. Its quiet discharge and controllable recoil excel in stealth close-quarters combat."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"mp40_silenced_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"48"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"mp40_silenced_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"500 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"mp40_silenced_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"32 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_greasegun"
+			group			"greasegun_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"ui_mp/assets/hud@greaser.dds"
+			backcolor		0 0 0 0.74
+			text			"M3 Greasegun"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"greasegun_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The M3 Grease Gun is an American .45 ACP submachine gun firing from a 30-round magazine at 522 RPM. Its simple, rugged design delivers reliable performance and controllable recoil, excelling in close-quarters engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"greasegun_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"50"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"greasegun_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"522 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"greasegun_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"30 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"decoration_primary_pps43"
+			group			"pps43_info"
+			visible			0
+			rect			5 3 205 109
+			origin			ORIGIN_MENUWINDOW_C
+			style			WINDOW_STYLE_SHADER
+			forecolor		1 1 1 1
+			background		"gfx/icons/hud@pps43.dds"
+			backcolor		0 0 0 0.74
+			text			"PPS43"
+			textfont		UI_FONT_NORMAL
+			textscale		.16
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		5
+			textaligny		109
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_text"
+			group			"pps43_info"
+			visible			0
+			rect			5 130 205 200
+			origin			ORIGIN_MENUWINDOW_C
+			autowrapped
+			text			"The PPS-43 is a Soviet submachine gun firing 7.62x25mm rounds in full-auto from a 35-round magazine. Its compact, lightweight design and high rate of fire excel in close-quarters engagements."
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			decoration
+		}
+		// WEAPON PROPERTIES
+		itemDef
+		{
+			name			"weapon_info_damage"
+			group			"pps43_info"
+			visible			0
+			rect			214 235 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"48"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_firerate"
+			group			"pps43_info"
+			visible			0
+			rect			214 259 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"600 RPM (Auto)"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
+			decoration
+		}
+		itemDef
+		{
+			name			"weapon_info_clipsize"
+			group			"pps43_info"
+			visible			0
+			rect			214 283 214 24
+			origin			ORIGIN_MENUWINDOW_C
+			forecolor		1 1 1 1
+			text			"35 Rounds"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		-5
 			decoration
 		}
 	}

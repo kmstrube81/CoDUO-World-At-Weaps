@@ -530,9 +530,13 @@ initPerkCvars()
 	
 	level.tripwire_num_traps = cvardef("scr_tripwire_num_traps",16,1,32,"int");
 	level.tripwire_satchels = cvardef("scr_tripwire_satchels",1,0,1,"int");
+	updateEnableStringCvar(level.tripwire_satchels, "ui_tripwire_satchels");
 	level.tripwire_stickynades = cvardef("scr_tripwire_stickynades",1,0,2,"int");
+	updateEnableStringCvar(level.tripwire_stickynades, "ui_tripwire_stickynades");
 	level.tripwire_plant_time = cvardef("scr_tripwire_plant_time",5,1,99,"int");
+	updateTimeStringCvar(level.tripwire_plant_time, "ui_tripwire_plant_time");
 	level.tripwire_defuse_time = cvardef("scr_tripwire_defuse_time",5,1,99,"int");
+	updateTimeStringCvar(level.tripwire_defuse_time, "ui_tripwire_defuse_time");
 	
 	if(!level.waw_teamplay)
 	{
@@ -572,10 +576,16 @@ initPerkCvars()
 	
 	level.marathon_sprint_time_value = cvardef("scr_marathon_sprint_time",200,100,999,"int");
 	level.marathon_sprint_time = (float)100 / (float)level.marathon_sprint_time_value;
+	if(level.allow_marathon == 2)
+		setCvar("ui_marathon_sprint_time", "Unlimited");
+	else
+		updateMultiplierStringCvar(level.marathon_sprint_time_value, "ui_marathon_sprint_time");
 	level.marathon_sprint_speed_value = cvardef("scr_marathon_sprint_speed", 100, 100, 200, "int");
 	level.marathon_sprint_speed = (float)level.marathon_sprint_speed_value * (float)0.01;
+	updateMultiplierStringCvar(level.marathon_sprint_speed_value, "ui_marathon_sprint_speed");
 	level.marathon_sprint_recovery_value = cvardef("scr_marathon_sprint_recovery", 100, 100, 200, "int");
 	level.marathon_sprint_recovery = (float)level.marathon_sprint_recovery_value * (float)0.01;
+	updateMultiplierStringCvar(level.marathon_sprint_recovery_value, "ui_marathon_sprint_recovery");
 	
 	level.allow_medic = cvardef("scr_allow_medic",1,0,1,"int");
 	cvardef("ui_allow_medic",level.allow_medic,0,1,"int");
@@ -585,13 +595,21 @@ initPerkCvars()
 	level.medic_firstaidkits = cvardef("scr_medic_firstaidkits", 2, 0, 99, "int");
 	level.medic_firstaidhealth = cvardef("scr_medic_firstaidhealth", 50, 1, 100, "int");
 	level.medic_firstaiddelay = cvardef("scr_medic_firstaiddelay", 10,0,999, "int");
+	updateTimeStringCvar(level.medic_firstaiddelay, "ui_medic_firstaiddelay");
 	
 	level.allow_scavenger = cvardef("scr_allow_scavenger",2,0,2,"int");
 	cvardef("ui_allow_scavenger",level.allow_scavenger,0,1,"int");
 	level.cost_scavenger = cvardef("scr_scavenger_cost",1,0,"","int");
 	updateCostStringCvar(level.cost_scavenger,"ui_scavenger_cost");
 	
+	if(level.allow_scavenger == 2)
+		setCvar("ui_scavenger_autosearch", "Enabled");
+	else
+		setCvar("ui_scavenger_autosearch", "Disabled");
+	
 	level.scavenger_search_time = cvardef("scr_scavenger_search_time", 1, 1, 10, "int");
+	updateTimeStringCvar(level.scavenger_search_time,"ui_scavenger_search_time");
+	
 }
 
 initKSCvars()
@@ -1274,9 +1292,13 @@ updatePerkCvars()
 	
 	level.tripwire_num_traps = updateCvar("scr_tripwire_num_traps",level.tripwire_num_traps,1,32,"int");
 	level.tripwire_satchels = updateCvar("scr_tripwire_satchels",level.tripwire_satchels,0,1,"int");
+	updateEnableStringCvar(level.tripwire_satchels,"ui_tripwire_satchels");
 	level.tripwire_stickynades = updateCvar("scr_tripwire_stickynades",level.tripwire_stickynades,0,2,"int");
+	updateEnableStringCvar(level.tripwire_stickynades,"ui_tripwire_stickynades");
 	level.tripwire_plant_time = updateCvar("scr_tripwire_plant_time",level.tripwire_plant_time,1,99,"int");
+	updateTimeStringCvar(level.tripwire_plant_time,"ui_tripwire_plant_time");
 	level.tripwire_defuse_time = updateCvar("scr_tripwire_defuse_time",level.tripwire_defuse_time,1,99,"int");
+	updateTimeStringCvar(level.tripwire_defuse_time,"ui_tripwire_defuse_time");
 	
 	///////////////////////////////////////////////////////////////
 	// 3X SMOKE
@@ -1312,10 +1334,16 @@ updatePerkCvars()
 	
 	level.marathon_sprint_time_value = updateCvar("scr_marathon_sprint_time",level.marathon_sprint_time_value,100,999,"int");
 	level.marathon_sprint_time = (float)100 / (float)level.marathon_sprint_time_value;
+	if(level.allow_marathon == 2)
+		setCvar("ui_marathon_sprint_time", "Unlimited");
+	else
+		updateMultiplierStringCvar(level.marathon_sprint_time_value, "ui_marathon_sprint_time");
 	level.marathon_sprint_speed_value = updateCvar("scr_marathon_sprint_speed", level.marathon_sprint_speed_value, 100, 200, "int");
 	level.marathon_sprint_speed = (float)level.marathon_sprint_speed_value * (float)0.01;
+	updateMultiplierStringCvar(level.marathon_sprint_speed_value, "ui_marathon_sprint_speed");
 	level.marathon_sprint_recovery_value = updateCvar("scr_marathon_sprint_recovery", level.marathon_sprint_recovery_value, 100, 200, "int");
 	level.marathon_sprint_recovery = (float)level.marathon_sprint_recovery_value * (float)0.01;
+	updateMultiplierStringCvar(level.marathon_sprint_recovery_value, "ui_marathon_sprint_recovery");
 	
 	///////////////////////////////////////////////////////////////
 	// MEDIC
@@ -1328,6 +1356,7 @@ updatePerkCvars()
 	level.medic_firstaidkits = updateCvar("scr_medic_firstaidkits", level.medic_firstaidkits, 0, 99, "int");
 	level.medic_firstaidhealth = updateCvar("scr_medic_firstaidhealth", level.medic_firstaidhealth, 1, 100, "int");
 	level.medic_firstaiddelay = updateCvar("scr_medic_firstaiddelay", level.medic_firstaiddelay,0,999, "int");
+	updateTimeStringCvar(level.medic_firstaiddelay,"ui_medic_firstaiddelay");
 	
 	///////////////////////////////////////////////////////////////
 	// SCAVENGER
@@ -1337,7 +1366,14 @@ updatePerkCvars()
 	level.cost_scavenger = updateCvar("scr_scavenger_cost", level.cost_scavenger, 0,"","int");
 	updateCostStringCvar(level.cost_scavenger, "ui_scavenger_cost");
 	
+	if(level.allow_scavenger == 2)
+		setCvar("ui_scavenger_autosearch", "Enabled");
+	else
+		setCvar("ui_scavenger_autosearch", "Disabled");
+	
 	level.scavenger_search_time = updateCvar("scr_scavenger_search_time", level.scavenger_search_time, 1, 10, "int");
+	
+	updateTimeStringCvar(level.scavenger_search_time, "ui_scavenger_search_time");
 	
 	////////////////////////////////////////
 	//PERK RESTRICTION CVARS
@@ -1520,6 +1556,32 @@ updateTimeStringCvar(cost, cvar)
 	{
 		string = "(" + cost + " seconds)";
 	}
+	if(getCvar(cvar) != string)
+	{
+		setCvar(cvar, string);
+	}
+}
+updateEnableStringCvar(cost, cvar)
+{
+	if(cost == 1)
+	{
+		string = "Enabled";
+	}
+	else
+	{
+		string = "Disabled";
+	}
+	if(getCvar(cvar) != string)
+	{
+		setCvar(cvar, string);
+	}
+}
+updateMultiplierStringCvar(cost, cvar)
+{
+	multiplier = (float)cost * (float)0.01;
+	
+	string = "(" + multiplier + "x)";
+	
 	if(getCvar(cvar) != string)
 	{
 		setCvar(cvar, string);
