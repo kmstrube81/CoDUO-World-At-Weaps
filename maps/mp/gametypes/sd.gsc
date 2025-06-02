@@ -1012,7 +1012,7 @@ menu_spawn(weapon)
 	 		//self.pers["weapon1"] = weapon;
 
 			// setup all the weapons
-			self maps\mp\gametypes\_loadout_gmi::NewPlayerSpawnLoadout();
+			self maps\mp\gametypes\_loadout_gmi::PlayerSpawnLoadout();
 //	 		self setWeaponSlotWeapon("primary", weapon);
 //			self setWeaponSlotAmmo("primary", 999);
 //			self setWeaponSlotClipAmmo("primary", 999);
@@ -1039,7 +1039,7 @@ menu_spawn(weapon)
 //	 		self.pers["weapon"] = weapon;
 //	 		self.pers["weapon1"] = weapon;
 			// setup all the weapons
-			self maps\mp\gametypes\_loadout_gmi::NewPlayerSpawnLoadout();
+			self maps\mp\gametypes\_loadout_gmi::PlayerSpawnLoadout();
 //	 		self setWeaponSlotWeapon("primary", weapon);
 //			self setWeaponSlotAmmo("primary", 999);
 //			self setWeaponSlotClipAmmo("primary", 999);

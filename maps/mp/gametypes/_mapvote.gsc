@@ -5,9 +5,6 @@
 
 Initialize()
 {
-	PrecacheString(&"Press ^2FIRE^7 to vote                           Votes");
-	PrecacheString(&"Time Left: ");
-	PrecacheString(&"Next Map Vote");
 	
 	//init cvars
 	if(getCvar("sv_map_vote") == "")
@@ -99,7 +96,7 @@ CreateHud()
 	level.vote_headerText.x = 210;
 	level.vote_headerText.y = level.waw_mapvotehudoffset + 21;
 	level.vote_headerText.sort = 9998;
-	level.vote_headerText.label = level.mapvotetext["MapVoteHeader"];
+	level.vote_headerText.label = level.votetext;
 	level.vote_headerText.fontscale = 1.3;
 
 	level.vote_leftline = newHudElem();
@@ -132,7 +129,7 @@ CreateHud()
 	level.vote_hud_timeleft.y = level.waw_mapvotehudoffset + 26;
 	level.vote_hud_timeleft.sort = 9998;
 	level.vote_hud_timeleft.fontscale = .8;
-	level.vote_hud_timeleft.label = level.mapvotetext["TimeLeft"];
+	level.vote_hud_timeleft.label = level.votetext_time;
 	level.vote_hud_timeleft setValue( level.waw_mapvotetime );	
 	
 	level.vote_hud_instructions = newHudElem();
@@ -141,7 +138,7 @@ CreateHud()
 	level.vote_hud_instructions.y = level.waw_mapvotehudoffset + 56;
 	level.vote_hud_instructions.sort = 9998;
 	level.vote_hud_instructions.fontscale = 1;
-	level.vote_hud_instructions.label = level.mapvotetext["MapVote"];
+	level.vote_hud_instructions.label = level.votetext_map;
 	level.vote_hud_instructions.alignX = "center";
 	level.vote_hud_instructions.alignY = "middle";
 	

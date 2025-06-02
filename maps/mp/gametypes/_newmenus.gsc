@@ -39,6 +39,14 @@ precacheNewMenus()
 	precacheShader("white");
 	precachePerkIcons();
 	precacheKillstreakIcons();
+	
+	level.votetext = &"Press ^2FIRE^7 to vote";
+	level.votetext_time = &"Time Left: ";
+	level.votetext_map = &"Next Map Vote";
+	
+	PrecacheString(level.votetext);
+	PrecacheString(level.votetext_time);
+	PrecacheString(level.votetext_map);
 
 }
 

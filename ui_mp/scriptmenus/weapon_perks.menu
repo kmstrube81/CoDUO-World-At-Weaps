@@ -303,15 +303,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 //Extra Equipment
@@ -340,15 +331,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				show extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -393,15 +375,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				show bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -446,15 +419,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				show tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -499,15 +463,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 //Extra Smokes
@@ -536,15 +491,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				show extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -589,15 +535,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				show extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -642,15 +579,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				show extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -695,15 +623,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 //Extra Smokes
@@ -732,15 +651,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				show marathon_info;
-				hide medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -785,15 +695,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				show medic_info;
-				hide scavenger_info;
 			}
 		}
 		itemDef 
@@ -838,15 +739,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide extra_equipment_info;
-				hide tripwire_info;
-				hide bomb_squad_info;
-				hide extra_ammo_info;
-				hide extra_grenade_info;
-				hide extra_smoke_info;
-				hide marathon_info;
-				hide medic_info;
-				show scavenger_info;
 			}
 		}
 		itemDef 
@@ -899,685 +791,6 @@
 			textscale		.24
 			textalignx		10
 			textaligny		20
-			decoration
-		}
-//WEAPON INFO
-		itemDef
-		{
-			name			"decoration_primary_extra_equipment"
-			group			"extra_equipment_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Weapon_Satchel.dds"
-			backcolor		0 0 0 0.74
-			text			"Equipment x2"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"extra_equipment_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Spawn with twice the amount of ammo for the weapon in the equipment slot. Don't forget to equip a weapon in the equipment slot!"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_extra_equipment"
-			group			"bomb_squad_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_DetectExplosives.dds"
-			backcolor		0 0 0 0.74
-			text			"Bomb Squad"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"bomb_squad_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Can pass over enemy tripwires without setting them off. On-screen warnings for nearby traps."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_tripwire"
-			group			"tripwire_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Tripwire.dds"
-			backcolor		0 0 0 0.74
-			text			"Explosives Engineer"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"tripwire_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Set different types of traps using your explosives. Set a tripwire with 2 grenades of the same type. Set a manually detonatable explosive with a satchel charge. Stick explosives onto surfaces."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"tripwire_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Traps per team:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"tripwire_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Remote Satchels:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"tripwire_info"
-			visible 		0
-			rect			0 283 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Sticky Nades:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"tripwire_info"
-			visible 		0
-			rect			0 307 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Trap Plant Time:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"tripwire_info"
-			visible 		0
-			rect			0 331 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Trap Defuse Time:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_damage"
-			group           "tripwire_info"
-			visible         0
-			rect            214 235 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "scr_tripwire_num_traps"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_radius"
-			group           "tripwire_info"
-			visible         0
-			rect            214 259 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_tripwire_satchels"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_ammo"
-			group           "tripwire_info"
-			visible         0
-			rect            214 283 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_tripwire_stickynades"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_ammo"
-			group           "tripwire_info"
-			visible         0
-			rect            214 307 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_tripwire_plant_time"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_ammo"
-			group           "tripwire_info"
-			visible         0
-			rect            214 331 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_tripwire_defuse_time"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_extra_grenade"
-			group			"extra_grenade_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_ExtraGrenade.dds"
-			backcolor		0 0 0 0.74
-			text			"Grenades x3"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"extra_grenade_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Spawn with 3 ammo for the weapon in your grenade slot. Don't forget to set a weapon in your grenade slot!"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_extra_smoke"
-			group			"extra_smoke_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_SpecialGrenade.dds"
-			backcolor		0 0 0 0.74
-			text			"Special Grenades x3"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"extra_smoke_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Spawn with 3 ammo for the weapon in your special grenade slot. Don't forget to set a weapon in your special grenade slot!"
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_extra_ammo"
-			group			"extra_ammo_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Extraammo.dds"
-			backcolor		0 0 0 0.74
-			text			"Bandolier"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"extra_ammo_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Spawn with max ammo for your primary weapon and sidearm."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_marathon"
-			group			"marathon_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Longersprint.dds"
-			backcolor		0 0 0 0.74
-			text			"Marathon"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"marathon_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Sprint for longer periods, sprint faster, and/or recover your stamina faster."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"marathon_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Sprint Time Multiplier:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"marathon_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Sprint Speed Multiplier:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"marathon_info"
-			visible 		0
-			rect			0 283 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Recovery Time Multiplier:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_damage"
-			group           "marathon_info"
-			visible         0
-			rect            214 235 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_marathon_sprint_time"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_radius"
-			group           "marathon_info"
-			visible         0
-			rect            214 259 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_marathon_sprint_speed"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_ammo"
-			group           "marathon_info"
-			visible         0
-			rect            214 283 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_marathon_sprint_recovery"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_medic"
-			group			"medic_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Medic.dds"
-			backcolor		0 0 0 0.74
-			text			"Medic"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"medic_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Spawn with Medkits that can be used for healing yourself or teammates standing in place and using the [Use] key."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"medic_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Number of Medkits:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"medic_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Medkit Size:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"medic_info"
-			visible 		0
-			rect			0 283 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Medkit Delay:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_damage"
-			group           "medic_info"
-			visible         0
-			rect            214 235 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "scr_medic_firstaidkits"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_radius"
-			group           "medic_info"
-			visible         0
-			rect            214 259 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "scr_medic_firstaidhealth"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_ammo"
-			group           "medic_info"
-			visible         0
-			rect            214 283 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_medic_firstaiddelay"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef
-		{
-			name			"decoration_primary_scavenger"
-			group			"scavenger_info"
-			visible			0
-			rect			55 4 105 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"gfx/icons/hud@Perk_Scavenger.dds"
-			backcolor		0 0 0 0.74
-			text			"Scavenger"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		109
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_info_text"
-			group			"scavenger_info"
-			visible			0
-			rect			5 130 200 200
-			origin			ORIGIN_MENUWINDOW_C
-			autowrapped
-			text			"Automatically grab extra ammo from bodies with quick search. Manually search bodies for extra weapons and ammo with the [Melee] button."
-			textfont		UI_FONT_NORMAL
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"scavenger_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Quick Search:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"scavenger_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Search Time:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_damage"
-			group           "scavenger_info"
-			visible         0
-			rect            214 235 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_scavenger_autosearch"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
-			decoration
-		}
-		itemDef 
-		{
-			name            "weapon_info_radius"
-			group           "scavenger_info"
-			visible         0
-			rect            214 259 214 24
-			origin          ORIGIN_MENUWINDOW_C
-			forecolor       1 1 1 1
-			cvar            "ui_scavenger_search_time"
-			textfont        UI_FONT_NORMAL
-			textscale       .24
-			textalign       ITEM_ALIGN_RIGHT
-			textalignx      -5
 			decoration
 		}
 	}

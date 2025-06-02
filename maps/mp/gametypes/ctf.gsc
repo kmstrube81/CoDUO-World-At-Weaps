@@ -1453,7 +1453,7 @@ menu_spawn(weapon)
 		if(self.pers["firstspawn"])
 		{
 	 		//self.pers["weapon"] = weapon;
-			self maps\mp\gametypes\_loadout_gmi::NewPlayerSpawnLoadout();
+			self maps\mp\gametypes\_loadout_gmi::PlayerSpawnLoadout();
 			self switchToWeapon(weapon);
 		}
 		else

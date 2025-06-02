@@ -361,7 +361,7 @@
 				play "mouse_click";
 				close weapon_loadout;
 				hide button_class;
-				open weapon_killstreaks;
+				open weapon_killstreak;
 			}
 			onFocus
 			{
@@ -1668,27 +1668,6 @@
 			showCvar		{ "luger_mp" }
 			decoration
 		}
-//Walther
-		itemDef
-		{
-			name			"decoration_primary_walther"
-			visible			1
-			rect			0 111 98 84
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_SHADER
-			forecolor		1 1 1 1
-			background		"ui_mp/assets/hud@p38.dds"
-			backcolor		0 0 0 0.74
-			text			"Walther P38"
-			textfont		UI_FONT_NORMAL
-			textscale		.16
-			textalign		ITEM_ALIGN_LEFT
-			textalignx		5
-			textaligny		84
-			cvarTest		"ui_sidearm_selected"
-			showCvar		{ "p38_mp" }
-			decoration
-		}
 //Welrod
 		itemDef
 		{
@@ -2153,7 +2132,7 @@
 			origin			ORIGIN_MENUWINDOW_C
 			style			WINDOW_STYLE_SHADER
 			forecolor		1 1 1 1
-			background		"ui_mp/assets/hud@mg42_dep_z.dds"
+			background		"ui_mp/assets/hud@mg42_dep_z.tga"
 			backcolor		0 0 0 0.74
 			cvarTest		"ui_killstreak_selected"
 			showCvar		{ "mg" }

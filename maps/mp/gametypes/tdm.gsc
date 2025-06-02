@@ -826,7 +826,9 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	
 	if(self.sessionteam == "spectator")
 		return;
-
+	
+	maps\mp\gametypes\_waw::wawPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc);
+	
 	// If the player was killed by a head shot, let players know it was a head shot kill
 	if(sHitLoc == "head" && sMeansOfDeath != "MOD_MELEE")
 		sMeansOfDeath = "MOD_HEAD_SHOT";
@@ -937,7 +939,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	// Stop thread if map ended on this death
 	if(level.mapended)
 		return;
-
+	/*
 	// Make the player drop his weapon
 	self dropItem(self getcurrentweapon());
 	
@@ -945,7 +947,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	self dropHealth();
 	self.autobalance = undefined;
 	body = self cloneplayer();
-
+	*/
 	delay = 2;	// Delay the player becoming a spectator till after he's done dying
 	wait delay;	// ?? Also required for Callback_PlayerKilled to complete before respawn/killcam can execute
 

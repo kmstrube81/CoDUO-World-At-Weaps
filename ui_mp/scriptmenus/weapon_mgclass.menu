@@ -168,11 +168,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide bren_info;
-				hide mp44_info;
-				hide fg42_info;
-				show bar_info;
-				show weapon_info;
 			}
 		}
 		execKey "1" { play "mouse_click"; scriptMenuResponse "bar"; open weapon_loadout; hide button_attachment_; close weapon_mgclass; }
@@ -218,11 +213,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide mp44_info;
-				hide fg42_info;
-				hide bar_info;
-				show bren_info;
-				show weapon_info;
 			}
 		}
 		execKey "2" { play "mouse_click"; scriptMenuResponse "bren"; open weapon_loadout; hide button_attachment_; close weapon_mgclass; }
@@ -268,24 +258,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide fg42_info;
-				hide bar_info;
-				hide bren_info;
-				show mp44_info;
-				show weapon_info;
 			}
 		}
-		execKey "3" { 
-						play "mouse_click";
-						scriptMenuResponse "mp44";
-						hide button_attachment_;
-						show button_attachment_mp44;
-						hide fg42_info;
-						hide bar_info;
-						hide bren_info;
-						show mp44_info;
-						show weapon_info;
-					}
+		execKey "3" { play "mouse_click"; scriptMenuResponse "mp44"; hide button_attachment_; show button_attachment_mp44; }
 		itemDef 
 		{
 			name			"button_weapon_mp44"
@@ -293,7 +268,7 @@
 			rect			0 90 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -328,24 +303,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide bar_info;
-				hide bren_info;
-				hide mp44_info;
-				show fg42_info;
-				show weapon_info;
 			}
 		}
-		execKey "4" { 
-						play "mouse_click";
-						scriptMenuResponse "fg42";	
-						hide button_attachment_;
-						show button_attachment_fg42;
-						hide bar_info;
-						hide bren_info;
-						hide mp44_info;
-						show fg42_info;
-						show weapon_info;
-					}
+		execKey "4" { play "mouse_click"; scriptMenuResponse "fg42"; hide button_attachment_; close show button_attachment_fg42; }
 		itemDef 
 		{
 			name			"button_weapon_fg42"
@@ -353,7 +313,7 @@
 			rect			0 120 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -395,11 +355,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide fg42_info;
-				hide bar_info;
-				hide bren_info;
-				show mp44_info;
-				show weapon_info;
 			}
 		}
 		itemDef 
@@ -446,11 +401,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide fg42_info;
-				hide bar_info;
-				hide bren_info;
-				show mp44_info;
-				show weapon_info;
 			}
 		}
 		itemDef 
@@ -498,11 +448,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide bar_info;
-				hide bren_info;
-				show mp44_info;
-				hide weapon_info;
-				show fg42_info;
 			}
 		}
 		itemDef 
@@ -549,11 +494,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide bar_info;
-				hide bren_info;
-				show mp44_info;
-				hide weapon_info;
-				show fg42_info;
 			}
 		}
 		itemDef 
@@ -606,376 +546,5 @@
 			textaligny		20
 			decoration
 		}
-		//WEAPON INFO
-		itemDef
-		{
-			name			"box_info_icon"
-			group			"weapon_info"
-			visible			0
-			rect			5 3 205 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_FILLED
-			backcolor		0 0 0 0.74
-			border			5
-			bordercolor		0.9 0.9 0.9 1
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Damage:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Fire Rate:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 283 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Clip Size:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef  
-		{  
-			name            "decoration_primary_bar"  
-			group           "bar_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@bar_fullauto.dds"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_BAR"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "bar_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The BAR is a heavy automatic rifle delivering high damage per shot and sustained fire at medium range. Its 20-round magazine and significant recoil demand disciplined bursts and careful ammo management."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef   
-		{  
-			name            "weapon_info_damage"  
-			group           "bar_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "70"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_firerate"  
-			group           "bar_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "545 RPM (Auto)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_clipsize"  
-			group           "bar_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "20 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_bren"  
-			group           "bren_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@bren.tga"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_BREN"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "bren_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The BREN is a British light machine gun with high stability when prone or deployed on a bipod. Delivering 75 damage per shot at 500 RPM, its 30-round magazine offers sustained suppressive fire but suffers from weight and slow reloads."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef   
-		{  
-			name            "weapon_info_damage"  
-			group           "bren_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "75"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_firerate"  
-			group           "bren_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "500 RPM (Auto)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_clipsize"  
-			group           "bren_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "30 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_mp44"  
-			group           "mp44_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@mp44_fullauto.dds"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_MP44"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "mp44_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The MP44 is a versatile German assault rifle bridging SMG firepower and rifle range. It offers solid damage and moderate recoil, firing controllable full-auto bursts at 500 RPM. Ideal for medium-range engagements, it balances sustained fire with mobility."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "mp44_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "68"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "mp44_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "500 RPM (Auto)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "mp44_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "30 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_fg42"  
-			group           "fg42_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "ui_mp/assets/hud@fg42.dds"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_FG42"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "fg42_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The FG42 is a German select-fire battle rifle offering high mobility and automatic fire. Its 70-damage rounds and 20-round magazine excel at medium range, but its recoil and limited ammo require disciplined bursts and accurate shots."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "fg42_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "70"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "fg42_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "857 RPM (Auto)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "fg42_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "20 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
 	}
 }

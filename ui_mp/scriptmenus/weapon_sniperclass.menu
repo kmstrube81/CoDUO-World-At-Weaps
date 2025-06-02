@@ -168,28 +168,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide enfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				show springfield_info;
 			}
 		}
-		execKey "1" { 
-						play "mouse_click";
-						scriptMenuResponse "m1903a3";
-						hide button_attachment_;
-						show button_attachment_springfield;
-						hide enfield_info;
-						hide mosin_nagant_info;
-						hide kar98k_info;
-						hide ptrs_info;
-						hide delisle_info;
-						show weapon_info;
-						show springfield_info;
-					}
+		execKey "1" { play "mouse_click"; scriptMenuResponse "m1903a3"; hide button_attachment_; show button_attachment_springfield; }
 		itemDef 
 		{
 			name			"button_weapon_springfield"
@@ -197,7 +178,7 @@
 			rect			0 30 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -231,28 +212,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide springfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				show enfield_info;
 			}
 		}
-		execKey "2" { 
-						play "mouse_click"; 
-						scriptMenuResponse "enfield"; 
-						hide button_attachment_; 
-						show button_attachment_enfield;
-						hide springfield_info;
-						hide mosin_nagant_info;
-						hide kar98k_info;
-						hide ptrs_info;
-						hide delisle_info;
-						show weapon_info;
-						show enfield_info;
-					}
+		execKey "2" { play "mouse_click"; scriptMenuResponse "enfield"; hide button_attachment_; show button_attachment_enfield; }
 		itemDef 
 		{
 			name			"button_weapon_enfield"
@@ -260,7 +222,7 @@
 			rect			0 60 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -294,28 +256,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide springfield_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide enfield_info;
-				show mosin_nagant_info;
 			}
 		}
-		execKey "3" { 
-						play "mouse_click";
-						scriptMenuResponse "mosin_nagant";
-						hide button_attachment_kar98k;
-						show button_attachment_mosin_nagant;
-						hide springfield_info;
-						hide kar98k_info;
-						hide ptrs_info;
-						hide delisle_info;
-						show weapon_info;
-						hide enfield_info;
-						show mosin_nagant_info;
-					}
+		execKey "3" { play "mouse_click"; scriptMenuResponse "mosin_nagant"; hide button_attachment_kar98k; show button_attachment_mosin_nagant;}
 		itemDef 
 		{
 			name			"button_weapon_nagant"
@@ -323,7 +266,7 @@
 			rect			0 90 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -356,28 +299,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide springfield_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide enfield_info;
-				hide mosin_nagant_info;
-				show kar98k_info;
 			}
 		}
-		execKey "4" { 
-						play "mouse_click";
-						scriptMenuResponse "kar98k";
-						hide button_attachment_;
-						show button_attachment_kar98k;
-						hide springfield_info;
-						hide ptrs_info;
-						hide delisle_info;
-						show weapon_info;
-						hide enfield_info;
-						hide mosin_nagant_info;
-						show kar98k_info;
-					}
+		execKey "4" { play "mouse_click"; scriptMenuResponse "kar98k"; hide button_attachment_; show button_attachment_kar98k;}
 		itemDef 
 		{
 			name			"button_weapon_kar98k"
@@ -385,7 +309,7 @@
 			rect			0 120 213 30
 			origin			ORIGIN_MENUWINDOW_B
 			forecolor		1 1 1 1
-			text			"(... points)"
+			text			""
 			textfont		UI_FONT_NORMAL
 			textscale		.24
 			textalign		ITEM_ALIGN_RIGHT
@@ -420,22 +344,9 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide enfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				show weapon_info;
-				hide springfield_info;
-				show delisle_info;
 			}
 		}
-		execKey "5" {
-						play "mouse_click";
-						scriptMenuResponse "delisle";
-						open weapon_loadout;
-						hide button_attachment_;
-						close weapon_sniperclass;
-					}
+		execKey "5" { play "mouse_click"; scriptMenuResponse "delisle"; open weapon_loadout; hide button_attachment_; close weapon_sniperclass; }
 		itemDef 
 		{
 			name			"button_weapon_delisle"
@@ -478,13 +389,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide enfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				show weapon_info;
-				hide springfield_info;
-				hide delisle_info;
-				show ptrs_info;
 			}
 		}
 		execKey "6" { play "mouse_click"; scriptMenuResponse "ptrs"; open weapon_loadout; hide button_attachment_; close weapon_sniperclass; }
@@ -534,13 +438,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide enfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				show springfield_info;
 			}
 		}
 		itemDef 
@@ -587,13 +484,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide enfield_info;
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				show springfield_info;
 			}
 		}
 		itemDef 
@@ -640,13 +530,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				show enfield_info;
 			}
 		}
 		itemDef 
@@ -693,13 +576,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide mosin_nagant_info;
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				show enfield_info;
 			}
 		}
 		itemDef 
@@ -746,13 +622,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				hide enfield_info;
-				show mosin_nagant_info;
 			}
 		}
 		itemDef 
@@ -799,13 +668,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide kar98k_info;
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				hide enfield_info;
-				show mosin_nagant_info;
 			}
 		}
 		itemDef 
@@ -852,13 +714,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				hide enfield_info;
-				hide mosin_nagant_info;
-				show kar98k_info;
 			}
 		}
 		itemDef 
@@ -905,13 +760,6 @@
 			onFocus
 			{
 				play "mouse_over";
-				hide ptrs_info;
-				hide delisle_info;
-				show weapon_info;
-				hide springfield_info;
-				hide enfield_info;
-				hide mosin_nagant_info;
-				show kar98k_info;
 			}
 		}
 		itemDef 
@@ -964,533 +812,5 @@
 			textaligny		20
 			decoration
 		}
-//WEAPON INFO
-		itemDef
-		{
-			name			"box_info_icon"
-			group			"weapon_info"
-			visible			0
-			rect			5 3 205 109
-			origin			ORIGIN_MENUWINDOW_C
-			style			WINDOW_STYLE_FILLED
-			backcolor		0 0 0 0.74
-			border			5
-			bordercolor		0.9 0.9 0.9 1
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 235 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Damage:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 259 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Fire Rate:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef
-		{
-			name			"weapon_propertiestext"
-			group			"weapon_info"
-			visible 		0
-			rect			0 283 210 24
-			origin			ORIGIN_MENUWINDOW_C
-			forecolor		1 1 1 1
-			autowrapped
-			text			"Clip Size:"
-			textfont		UI_FONT_NORMAL
-			textalignx		5
-			textscale		.24
-			decoration
-		}
-		itemDef  
-		{  
-			name            "decoration_primary_springfield"  
-			group           "springfield_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@scoped_springfield.tga"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_SPRINGFIELD"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "springfield_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The Springfield is a bolt-action sniper rifle dealing 120 damage per shot. It fires at 182 RPM with a five-round magazine, excelling in long-range precision but limited by its slow cycle and reload speed."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef   
-		{  
-			name            "weapon_info_damage"  
-			group           "springfield_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "120"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_firerate"  
-			group           "springfield_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "182 RPM (Bolt Action)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_clipsize"  
-			group           "springfield_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "5 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_enfield"  
-			group           "enfield_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@enfield.tga"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_LEEENFIELD"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "enfield_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The Lee-Enfield is a British bolt-action rifle firing 120 damage rounds with excellent long-range precision. Its 10-round magazine and 182 RPM cycle reward skilled marksmanship, but manual bolt operation and slow reloads limit sustained fire."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "enfield_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "120"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "enfield_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "182 RPM (Bolt Action)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "enfield_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "10 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_mosin_nagant"  
-			group           "mosin_nagant_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@nagant.tga"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_MOSINNAGANT"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "mosin_nagant_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The Mosin-Nagant is a bolt-action rifle dealing 120 damage per shot. It fires at 182 RPM with a five-round magazine, excelling at long-range precision but limited by slow cycling and small capacity."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "mosin_nagant_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "120"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "mosin_nagant_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "182 RPM (Bolt Action)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "mosin_nagant_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "5 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_kar98k"  
-			group           "kar98k_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "gfx/icons/hud@kar98.tga"  
-			backcolor       0 0 0 0.74  
-			text            "@WEAPON_KAR98K"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "kar98k_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The Kar 98k is a German bolt-action rifle known for high precision and stopping power. It deals 120 damage per shot with a five-round magazine. Ideal for long-range engagement but limited by slow cycling and reload times."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "kar98k_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "120"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "kar98k_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "182 RPM (Bolt Action)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "kar98k_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "5 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_delisle"  
-			group           "delisle_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "ui_mp/assets/hud@delisle.tga"  
-			backcolor       0 0 0 0.74  
-			text            "De Lisle Carbine"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "delisle_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The De Lisle Carbine is a suppressed bolt-action rifle firing 115-damage subsonic rounds at about 182 RPM. Its 7-round magazine excels in silent long-range takedowns, but its manual action and limited capacity demand careful shot placement."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef   
-		{  
-			name            "weapon_info_damage"  
-			group           "delisle_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "115"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_firerate"  
-			group           "delisle_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "182 RPM (Bolt Action)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef   
-		{  
-			name            "weapon_info_clipsize"  
-			group           "delisle_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "7 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "decoration_primary_ptrs"  
-			group           "ptrs_info"  
-			visible         0  
-			rect            5 3 205 109  
-			origin          ORIGIN_MENUWINDOW_C  
-			style           WINDOW_STYLE_SHADER  
-			forecolor       1 1 1 1  
-			background      "ui_mp/assets/hud@ptrs.tga"  
-			backcolor       0 0 0 0.74  
-			text            "PTRS 41"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .16  
-			textalign       ITEM_ALIGN_LEFT  
-			textalignx      5  
-			textaligny      109  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_text"  
-			group           "ptrs_info"  
-			visible         0  
-			rect            5 130 205 200  
-			origin          ORIGIN_MENUWINDOW_C  
-			autowrapped  
-			text            "The PTRS-41 is a Soviet semi-automatic anti-tank rifle delivering high power rounds at 462 RPM. Its boltless design offers rapid follow-up shots compared to bolt-actions, but heavy recoil, limited magazine size, and weight require careful positioning and shot timing."  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			decoration  
-		}  
-// WEAPON PROPERTIES  
-		itemDef  
-		{  
-			name            "weapon_info_damage"  
-			group           "ptrs_info"  
-			visible         0  
-			rect            214 235 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "500"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_firerate"  
-			group           "ptrs_info"  
-			visible         0  
-			rect            214 259 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "462 RPM (Semi Auto)"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-		itemDef  
-		{  
-			name            "weapon_info_clipsize"  
-			group           "ptrs_info"  
-			visible         0  
-			rect            214 283 214 24  
-			origin          ORIGIN_MENUWINDOW_C  
-			forecolor       1 1 1 1  
-			text            "5 Rounds"  
-			textfont        UI_FONT_NORMAL  
-			textscale       .24  
-			textalign       ITEM_ALIGN_RIGHT  
-			textalignx      -5  
-			decoration  
-		}  
-
 	}
 }

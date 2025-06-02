@@ -336,11 +336,11 @@ wawPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHi
 		attacker.killstreak++;
 	attacker printDebug("Current killstreak is " + attacker.killstreak, "debug", "self");
 	
-	if(attacker.killstreak != 0 && attacker.killstreak % 10 == 0)
+	/*if(attacker.killstreak != 0 && attacker.killstreak % 10 == 0)
 	{
 		//announce to the server that attacker is on a killstreak
 		announceMessage("Someboyd is on a 10 killstreak","server");
-	}
+	}*/
 }
 
 handleBody(owner, sMod)
@@ -696,6 +696,10 @@ monitorArtillery()
 					fire_sound = "uk_fire_mission";
 					incoming_sound = "uk_incoming";
 					break;
+				case "british":
+					fire_sound = "ru_fire_mission";
+					incoming_sound = "ru_incoming";
+					break;
 				default:
 					fire_sound = "us_fire_mission";
 					incoming_sound = "us_incoming";
@@ -703,8 +707,8 @@ monitorArtillery()
 			}
 			else
 			{
-				fire_sound = "ru_fire_mission";
-				incoming_sound = "ru_incoming";
+				fire_sound = "ge_fire_mission";
+				incoming_sound = "ge_incoming";
 			}	
 			// play the vo for calling in the artillery strike
 			self playLocalSound(fire_sound);
@@ -1233,7 +1237,7 @@ monitorPlayer()
 	while(isAlive(self) && self.sessionstate == "playing")
 	{
 	
-		wait 0.05;
+		wait 0.1;
 		
 		// get current weapon
 		cw = self getCurrentWeapon();
@@ -1360,7 +1364,7 @@ monitorMedic()
 			{
 				if(self useButtonPressed() && self isOnGround())
 					break;
-				wait 0.05;
+				wait 0.1;
 			}
 
 			if(!(isalive(self) && self.sessionstate == "playing")) // if they've been killed
@@ -1805,7 +1809,7 @@ showBodysearchMessage(which_message)
 	self.waw_tripwiremessage.fontScale = 0.80;
 	if( which_message )
 		self.waw_tripwiremessage.color = (.5,.5,.5);
-	self.waw_tripwiremessage setText( level.scavenger_text );
+	self.waw_tripwiremessage setText( level.scavenger_string );
 
 	self.waw_tripwiremessage2 = newClientHudElem(self);
 	self.waw_tripwiremessage2.alignX = "center";
@@ -3457,9 +3461,9 @@ drawPerkHUDElements()
     self.perkHudList = [];
 
     // adjust these to taste — baseX should be just to the right of your rank/stance icons
-    baseX =  140;    // e.g. rank icon is ~32px wide + 32px padding
-    baseY =   436;    // align with bottom of stance icon
-    iconSize = 32;  // assuming your DDS is 16×16; change if it’s 24×24 etc.
+    baseX =  620;    // e.g. rank icon is ~32px wide + 32px padding
+    baseY =   408;    // align with bottom of stance icon
+    iconSize = 16;  // assuming your DDS is 16×16; change if it’s 24×24 etc.
     padding  =  2;
 
     // loop through your three perk slots

@@ -622,6 +622,7 @@ initKSCvars()
 	cvardef("ui_allow_artillery_ks",level.allow_artillery_ks,0,1,"int");
 	level.kills_artillery = cvardef("scr_artillery_kills",5,1,"","int");
 	updateKillStringCvar(level.kills_artillery, "ui_artillery_kills");
+	makeCvarServerInfo("ui_artillery_kills","1");
 	
 	level.allow_binoculars = cvardef("scr_allow_binoculars",1,0,1,"int");
 	cvardef("ui_allow_binoculars",level.allow_binoculars,0,1,"int");
@@ -634,6 +635,7 @@ initKSCvars()
 	cvardef("ui_allow_deployablemg_ks",level.allow_deployablemg_ks,0,1,"int");
 	level.kills_deployablemg = cvardef("scr_deployablemg_kills",5,1,"","int");
 	updateKillStringCvar(level.kills_deployablemg, "ui_deployablemg_kills");
+	makeCvarServerInfo("ui_deployablemg_kills","1");
 }
 
 updateWeaponCvars()
